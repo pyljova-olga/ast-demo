@@ -18,9 +18,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(public translate: TranslateService,
               private router: Router) {
+    this.url = this.router.url;
+    console.log(this.url);
     this.subscription = this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         this.url = event.url;
+        console.log(this.url, '2');
       }
     });
   }
