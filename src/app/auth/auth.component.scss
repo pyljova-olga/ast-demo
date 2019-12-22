@@ -15,12 +15,9 @@
     right: 0;
     top: 0;
     width: 50%;
-
-    &--login {
-      background: bottom right no-repeat;
-      background-image: url(../../assets/imgs/pictures/login.jpg);
-      background-size: cover;
-    }
+    background: bottom right no-repeat;
+    background-image: url(../../assets/imgs/pictures/login.jpg);
+    background-size: cover;
 
     &--register {
       background: top right no-repeat;

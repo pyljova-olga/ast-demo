@@ -8,4 +8,8 @@
   &.mat-tab-nav-bar {
     border-bottom: 0;
   }
+
+  .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+    display: none;
+  }
 }
