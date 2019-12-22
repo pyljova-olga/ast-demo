@@ -1,0 +1,164 @@
+@import '~@angular/material/theming';
+
+// Background config
+// Light bg
+$light-background:    #ffffff;
+$light-bg-darker-5:   darken($light-background, 5%);
+$light-bg-darker-10:  darken($light-background, 10%);
+$light-bg-darker-20:  darken($light-background, 20%);
+$light-bg-darker-30:  darken($light-background, 30%);
+$light-bg-lighter-5:  lighten($light-background, 5%);
+$dark-bg-alpha-4:     rgba(#1f2532, 0.04);
+$dark-bg-alpha-12:    rgba(#1f2532, 0.12);
+
+$mat-light-theme-background: (
+  background:               $light-background,
+  status-bar:               $light-bg-darker-20,
+  app-bar:                  $light-bg-darker-5,
+  hover:                    $dark-bg-alpha-4,
+  card:                     $light-bg-lighter-5,
+  dialog:                   $light-bg-lighter-5,
+  disabled-button:          $dark-bg-alpha-12,
+  raised-button:            $light-bg-lighter-5,
+  focused-button:           $dark-focused,
+  selected-button:          $light-bg-darker-20,
+  selected-disabled-button: $light-bg-darker-30,
+  disabled-button-toggle:   $light-bg-darker-10,
+  unselected-chip:          $light-bg-darker-10,
+  disabled-list-option:     $light-bg-darker-10,
+);
+
+// Light Theme Text
+$dark-text: #1f2532;
+$dark-primary-text: rgba($dark-text, 1);
+$dark-accent-text: rgba($dark-primary-text, 1);
+$dark-disabled-text: rgba($dark-primary-text, 0.38);
+$dark-dividers: rgba($dark-primary-text, 0.12);
+$dark-focused: rgba($dark-primary-text, 1);
+
+$mat-light-theme-foreground: (
+  base:              black,
+  divider:           $dark-dividers,
+  dividers:          $dark-dividers,
+  disabled:          $dark-disabled-text,
+  disabled-button:   rgba($dark-text, 0.26),
+  disabled-text:     $dark-disabled-text,
+  elevation:         black,
+  secondary-text:    $dark-accent-text,
+  hint-text:         $dark-disabled-text,
+  accent-text:       $dark-accent-text,
+  icon:              $dark-accent-text,
+  icons:             $dark-accent-text,
+  text:              $dark-primary-text,
+  slider-min:        $dark-primary-text,
+  slider-off:        rgba($dark-text, 0.26),
+  slider-off-active: $dark-disabled-text,
+);
+/*
+$flower-app-theme: (
+  primary: $flower-app-primary,
+  accent: $flower-app-accent,
+  warn: $flower-app-warn,
+  is-dark: false,
+  foreground: $flower-app-theme-foreground,
+  background: $flower-app-theme-background,
+);
+
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($flower-app-theme);
+/*/
+$mat-accent: (
+  main: #949494,
+  lighter: #ececec,
+  darker: #1f2532,
+  200: #949494, // For slide toggle,
+  contrast : (
+    main: $dark-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$mat-primary: (
+  main: #0e8938,
+  lighter: #84ed93,
+  darker: #84ed93,
+  200: #0e8938, // For slide toggle,
+  contrast : (
+    main: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$mat-warn: (
+  main: #f31b1b,
+  lighter: #ffb3b3,
+  darker: #f31b1b,
+  200: #f31b1b, // For slide toggle,
+  contrast : (
+    main: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+
+$theme-primary: mat-palette($mat-primary, main, lighter, darker);
+$theme-accent: mat-palette($mat-accent, main, lighter, darker);
+$theme-warn: mat-palette($mat-warn, main, lighter, darker);
+
+$theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+// $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
+
+// Theme Init
+@include angular-material-theme($theme);
+/*
+.theme-alternate {
+  @include angular-material-theme($altTheme);
+} */
+//  @include mat-core-theme($theme);
+//  @include mat-autocomplete-theme($theme);
+//  @include mat-button-theme($theme);
+//  @include mat-button-toggle-theme($theme);
+//  @include mat-card-theme($theme);
+//  @include mat-checkbox-theme($theme);
+//  @include mat-chips-theme($theme);
+//  @include mat-datepicker-theme($theme);
+//  @include mat-dialog-theme($theme);
+//  @include mat-grid-list-theme($theme);
+//  @include mat-icon-theme($theme);
+//  @include mat-input-theme($theme);
+//  @include mat-list-theme($theme);
+//  @include mat-menu-theme($theme);
+//  @include mat-progress-bar-theme($theme);
+//  @include mat-progress-spinner-theme($theme);
+//  @include mat-radio-theme($theme);
+//  @include mat-select-theme($theme);
+//  @include mat-sidenav-theme($theme);
+//  @include mat-slide-toggle-theme($theme);
+//  @include mat-slider-theme($theme);
+//  @include mat-tabs-theme($theme);
+//  @include mat-toolbar-theme($theme);
+//  @include mat-tooltip-theme($theme);
+
+/*
+$fontConfig: (
+  display-4: mat-typography-level(112px, 112px, 300, 'Roboto', -0.0134em),
+  display-3: mat-typography-level(56px, 56px, 400, 'Roboto', -0.0089em),
+  display-2: mat-typography-level(45px, 48px, 400, 'Roboto', 0.0000em),
+  display-1: mat-typography-level(34px, 40px, 400, 'Roboto', 0.0074em),
+  headline: mat-typography-level(24px, 32px, 400, 'Roboto', 0.0000em),
+  title: mat-typography-level(20px, 32px, 500, 'Roboto', 0.0075em),
+  subheading-2: mat-typography-level(16px, 28px, 400, 'Roboto', 0.0094em),
+  subheading-1: mat-typography-level(15px, 24px, 500, 'Roboto', 0.0067em),
+  body-2: mat-typography-level(14px, 24px, 500, 'Roboto', 0.0179em),
+  body-1: mat-typography-level(14px, 20px, 400, 'Roboto', 0.0179em),
+  button: mat-typography-level(16px, 16px, 400, 'Roboto', 0.0000em),
+  caption: mat-typography-level(12px, 20px, 400, 'Roboto', 0.0333em),
+  input: mat-typography-level(16px, 1.5px, 400, 'Roboto', 0.0094em)
+);
+@include mat-core($fontConfig);
+*/

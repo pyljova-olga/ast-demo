@@ -1,0 +1,152 @@
+form.Form(
+  (ngSubmit)='onSubmit()',
+  *ngIf='result !== "success"',
+  [formGroup]="registerForm")
+  div
+    mat-button-toggle-group.Form-row.Form-row--margin25(
+      formControlName="isPlantation")
+
+      mat-button-toggle(
+        [value]="false") {{'auth.fields.client.label' | translate}}
+      mat-button-toggle(
+        [value]="true") {{'auth.fields.plantation.label' | translate}}
+  div(
+    *ngIf="!registerForm.value.isPlantation")
+
+    mat-radio-group.Form-row.Form-row--margin25.Block(
+      formControlName="isLegalEntity",
+      color='primary')
+
+      mat-radio-button.Block(
+        [value]="true") {{'auth.fields.legalEntity.label' | translate}}
+      mat-radio-button.Block(
+        [value]="false") {{'auth.fields.individual.label' | translate}}
+
+  div(
+    *ngIf="registerForm.value.isPlantation")
+
+    mat-form-field.Form-row(
+      appearance="outline")
+
+      mat-label {{'auth.fields.plantationName.label' | translate}}
+      input(
+        matInput,
+        placeholder="{{'auth.fields.plantationName.label' | translate}}",
+        formControlName="plantationName")
+      mat-error(
+        *ngIf="plantationName.invalid && plantationName.errors.required") {{'auth.fields.plantationName.error.required' | translate}}
+
+
+  div(
+    *ngIf="!registerForm.value.isPlantation && registerForm.value.isLegalEntity")
+
+    mat-form-field.Form-row(
+      appearance="outline")
+
+      mat-label {{'auth.fields.companyName.label' | translate}}
+      input(
+        matInput,
+        placeholder="{{'auth.fields.companyName.label' | translate}}",
+        formControlName="companyName")
+      mat-error(
+        *ngIf="companyName.invalid && companyName.errors.required") {{'auth.fields.companyName.error.required' | translate}}
+
+
+  div
+    mat-form-field.Form-row(
+      appearance="outline")
+
+      mat-label {{'auth.fields.contactName.label' | translate}}
+      input(
+        matInput,
+        placeholder="{{'auth.fields.contactName.label' | translate}}",
+        formControlName="contactName")
+      mat-error(
+        *ngIf="contactName.invalid && contactName.errors.required") {{'auth.fields.contactName.error.required' | translate}}
+
+
+  div
+    mat-form-field.Form-row(
+      appearance="outline")
+
+      mat-label {{'auth.fields.contactPhone.label' | translate}}
+      input(
+        matInput,
+        placeholder="{{'auth.fields.contactPhone.label' | translate}}",
+        formControlName="contactPhone")
+      mat-error(
+        *ngIf="contactPhone.invalid && contactPhone.errors.required") {{'auth.fields.contactPhone.error.required' | translate}}
+
+
+  .Form-row.Form-row--cols2.Clearfix
+    div
+      mat-form-field.Block(
+        appearance="outline")
+
+        mat-label {{'auth.fields.email.label' | translate}}
+        input(
+          matInput,
+          placeholder="{{'auth.fields.email.label' | translate}}",
+          formControlName="email")
+        mat-error(
+          *ngIf="email.invalid")
+          ng-container(
+            *ngIf="email.errors.required") {{'auth.fields.email.error.required' | translate}}
+          ng-container(
+            *ngIf="!email.errors.required && email.errors.email") {{'auth.fields.email.error.email' | translate}}
+
+    div
+      mat-form-field.Block(
+      appearance="outline")
+
+        mat-label {{'auth.fields.skype.label' | translate}}
+        input(
+          matInput,
+          placeholder="{{'auth.fields.skype.label' | translate}}",
+          formControlName="skype")
+
+  div(
+    formArrayName="alternatives",
+    *ngFor="let alternative of registerForm.get('alternatives').controls; let i = index;")
+
+    div(
+      [formGroupName]="i")
+      mat-form-field.Form-row(
+        appearance="outline")
+
+        mat-label {{'auth.fields.alternative.label' | translate}}
+        input(
+          matInput,
+          placeholder="{{'auth.fields.alternative.label' | translate}}",
+          formControlName="alternative")
+        button(
+          mat-icon-button,
+          matSuffix,
+          color='primary',
+          (click)="removeAlternative(i)")
+          mat-icon.Panel-icon(svgIcon='close')
+
+  .Form-row.Form-row--margin25
+    a.Green((click)='addAlternative()') {{'auth.register.btnAddAlternative' | translate}}
+
+  div.Form-row.Form-row--margin25
+    mat-checkbox.Block(
+      formControlName="agreeWithTermsAndConditions",
+      [value]='true',
+      color="primary")
+      span {{'auth.fields.agree.label1' | translate}}
+      a.Green(href="#") {{'auth.fields.agree.label2' | translate}}
+      span {{'auth.fields.agree.label3' | translate}}
+    mat-error(
+      *ngIf="agree.invalid && agree.errors.required") {{'auth.fields.agree.error.required' | translate}}
+
+
+  .BtnPanel
+    button(
+      mat-flat-button,
+      [disabled]='registerForm.status === "INVALID"',
+      color="primary",
+      type='submit') {{'auth.register.btnRegister' | translate}}
+
+div.Result.Result--success(
+  *ngIf='result === "success"') {{'auth.register.success' | translate}}

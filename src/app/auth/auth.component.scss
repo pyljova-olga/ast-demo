@@ -1,0 +1,94 @@
+@import '../../styles/variables';
+
+:host,
+.AuthPage {
+  display:block;
+  min-height: 100%;
+}
+
+.AuthPage {
+  overflow:hidden;
+
+  &-picture {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    width: 50%;
+
+    &--login {
+      background: bottom right no-repeat;
+      background-image: url(../../assets/imgs/pictures/login.jpg);
+      background-size: cover;
+    }
+
+    &--register {
+      background: top right no-repeat;
+      background-image: url(../../assets/imgs/pictures/registration.jpg);
+      background-size: cover;
+    }
+
+    &--restore {
+      background: top center no-repeat;
+      background-image: url(../../assets/imgs/pictures/recovery.jpg);
+      background-size: cover;
+    }
+  }
+
+  &-header,
+  &-content {
+    width: 50%;
+    padding: 0 100px 0 27px;
+  }
+
+  &-header {
+    border-bottom: 1px solid $divider;
+    padding-top: 130px;
+  }
+
+  &-content {
+    padding-top: 73px;
+    padding-bottom: 73px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .AuthPage {
+    &-picture {
+      display: none;
+    }
+
+    &-header,
+    &-content {
+      width: 100%;
+      padding: 0 18px 0 15px;
+    }
+
+    &-header {
+      padding-top: 130px;
+    }
+
+    &-content {
+      padding-top: 73px;
+      padding-bottom: 73px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .AuthPage {
+    &-header,
+    &-content {
+      padding: 0 15px;
+    }
+
+    &-header {
+      padding-top: 72px;
+    }
+
+    &-content {
+      padding-top: 49px;
+      padding-bottom: 49px;
+    }
+  }
+}

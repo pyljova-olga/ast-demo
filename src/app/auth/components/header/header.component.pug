@@ -1,0 +1,30 @@
+.Header
+  .Header-logo
+    img(
+      src='../assets/imgs/logo.svg',
+      alt='B2B Flovers')
+  .Header-title(*ngIf='url === "/auth/restore"') {{'auth.header.restorePassword' | translate}}
+  .Header-menu(*ngIf='url !== "/auth/restore"')
+    nav.Tabs(mat-tab-nav-bar)
+      a(
+        mat-tab-link,
+        routerLink="/auth/login",
+        routerLinkActive #rla="routerLinkActive",
+        [active] = "rla.isActive") {{'auth.header.login' | translate}}
+      a(
+        mat-tab-link,
+        routerLink="/auth/register",
+        routerLinkActive #rrla="routerLinkActive",
+        [active] = "rrla.isActive") {{'auth.header.register' | translate}}
+  .Header-langs.Langs
+    .Langs-panel(
+      ddpanel,
+      showEvent='click',
+      [(isOpened)]='isLangPanelOpened',
+      [showArrow]='true')
+      div.Langs-header(ddpanel-header) {{ translate.currentLang }}
+      div(ddpanel-body)
+        a.Langs-lang.Green(
+          *ngFor='let lang of langsList',
+          (click)='changeLang(lang)',
+          [hidden]='translate.currentLang === lang') {{lang}}

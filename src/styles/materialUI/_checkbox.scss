@@ -1,0 +1,18 @@
+.B2BF {
+  .mat-checkbox-frame {
+    border-color: $grey-dark;
+  }
+
+  .mat-checkbox.Block + .mat-checkbox.Block {
+    margin-top: 15px;
+  }
+
+  .mat-checkbox-layout {
+    white-space: normal;
+  }
+
+  .mat-checkbox-inner-container {
+    margin-top: 3px;
+    margin-right: 12px;
+  }
+}

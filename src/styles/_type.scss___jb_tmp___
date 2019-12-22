@@ -1,0 +1,88 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+small {
+  font-size: 14px;
+}
+
+a {
+  cursor: pointer;
+}
+
+a.Green {
+  color: $green;
+  text-decoration: none;
+
+  &:hover {
+    color: $green-light;
+  }
+}
+
+.TextLeft {
+  text-align: left;
+}
+
+.TextRight {
+  text-align: right;
+}
+
+.TextCenter {
+  text-align: center;
+}
+
+.TextJustify {
+  text-align: justify;
+}
+
+.TextNowrap {
+  white-space: nowrap;
+}
+
+.TextLowercase {
+  text-transform: lowercase;
+}
+
+.TextUppercase {
+  text-transform: uppercase;
+}
+
+.TextCapitalize {
+  text-transform: capitalize;
+}
+
+.TextGreen {
+  color: $green;
+}
+
+.TextRed {
+  color: $red;
+}
+
+.TextBlack {
+  color: $black;
+}

@@ -1,0 +1,90 @@
+.B2BF {
+  .mat-button-base {
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 400;
+  }
+   .mat-button-focus-overlay,
+   .mat-button-base {
+     transition: all linear 0.2s;
+   }
+
+  .mat-stroked-icon-button { // FOR stroked button with icon
+    padding: 0 7px;
+
+    .mat-icon:first-child {
+      margin-right: 5px;
+    }
+
+    .mat-icon:last-child {
+      margin-left: 5px;
+    }
+  }
+
+  .mat-button-base {
+    &.mat-primary, &.mat-accent, &.mat-warn, &[disabled] {
+      &[disabled] {
+        background: $grey-default;
+        color: $white;
+      }
+    }
+  }
+
+  .mat-button,
+  .mat-icon-button,
+  .mat-stroked-button {
+    &.mat-primary, &.mat-accent, &.mat-warn, &[disabled] {
+      &[disabled] {
+        background: transparent;
+        color: $grey-dark;
+      }
+    }
+  }
+
+  .mat-stroked-button {
+    &.mat-primary, &.mat-accent, &.mat-warn, &[disabled] {
+      &[disabled] {
+        border-color: $grey-dark;
+      }
+    }
+  }
+
+  .mat-button-base:not([disabled]) {
+    .mat-button-focus-overlay {
+      opacity: 0;
+    }
+
+    &.mat-stroked-button {
+      &.mat-primary {
+        color: $green;
+        border-color: $green;
+      }
+    }
+
+    &.mat-stroked-button:hover,
+    &.mat-stroked-button:active {
+      &.mat-primary {
+        border-color: $green-light;
+      }
+    }
+
+    &.mat-button:hover,
+    &.mat-button:active,
+    &.mat-icon-button:hover,
+    &.mat-icon-button:active,
+    &.mat-stroked-button:hover,
+    &.mat-stroked-button:active {
+      &.mat-primary {
+        color: $green-light;
+      }
+    }
+
+    &.mat-flat-button:hover,
+    &.mat-flat-button:active {
+      &.mat-primary {
+        background: $green-light;
+        color: $white;
+      }
+    }
+  }
+}

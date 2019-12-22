@@ -1,0 +1,13 @@
+@media (max-width: 640px) {
+  .BtnPanel {
+    button {
+      display: block;
+      width: 100%;
+      margin: 0;
+    }
+
+    button + button {
+      margin-top: 9px;
+    }
+  }
+}

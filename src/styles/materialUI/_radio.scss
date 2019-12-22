@@ -1,0 +1,9 @@
+.B2BF {
+  .mat-radio-outer-circle {
+    border-color: $grey-dark;
+  }
+
+  .mat-radio-button.Block + .mat-radio-button.Block {
+    margin-top: 15px;
+  }
+}

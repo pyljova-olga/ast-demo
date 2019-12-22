@@ -1,0 +1,87 @@
+// ---------------------------------------------------------------------------
+// Utility classes
+// ---------------------------------------------------------------------------
+.B2BF {
+  .Clearfix, .CenterBlock {
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+
+    &:after {
+      clear: both;
+    }
+  }
+
+  .Row {
+    margin-bottom: 0;
+  }
+
+  .RowInline {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .PullRight {
+    float: right !important;
+  }
+
+  .PullLeft {
+    float: left !important;
+  }
+
+  .PullDown {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    max-height: 100%;
+    overflow: auto;
+  }
+
+  .CenterBlock {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  // ---------------------------------------------------------------------------
+
+  .Show {
+    display: block !important;
+  }
+
+  [hidden],
+  .Hidden {
+    display: none !important;
+  }
+
+  .Invisible {
+    visibility: hidden;
+  }
+
+  // ---------------------------------------------------------------------------
+
+  .Unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .Pointer {
+    cursor: pointer;
+  }
+
+  .OneLine {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .Block {
+    display: block;
+  }
+}

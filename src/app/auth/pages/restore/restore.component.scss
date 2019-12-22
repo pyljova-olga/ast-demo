@@ -1,0 +1,26 @@
+.Form {
+  p {
+    margin: 0 0 9px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  p.Error {
+    margin-bottom: 23px;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .BtnPanel {
+    button {
+      display: block;
+      width: 100%;
+      margin: 0;
+    }
+
+    button + button {
+      margin-top: 9px;
+    }
+  }
+}

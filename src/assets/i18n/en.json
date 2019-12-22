@@ -1,0 +1,94 @@
+{
+	"auth": {
+		"fields": {
+			"agree": {
+				"error": {
+					"required": "Подтвердите согласие на обработку данных"
+				},
+        "label1": "I agree with ",
+        "label2": "the use",
+        "label3": " of my personal data."
+			},
+			"alternative": {
+				"label": "Add alternate contact form"
+			},
+			"client": {
+				"label": "Buyer"
+			},
+			"companyName": {
+				"error": {
+					"required": "Enter the company name"
+				},
+				"label": "Name of the company"
+			},
+			"contactName": {
+				"error": {
+					"required": "Contact person"
+				},
+				"label": "Surname and contact person names"
+			},
+			"contactPhone": {
+				"error": {
+					"required": "Enter the contact number"
+				},
+        "label": "Contact number"
+			},
+			"email": {
+				"error": {
+					"email": "Invalid email",
+					"required": "Enter email"
+				},
+				"label": "Email"
+			},
+			"individual": {
+				"label": "Natural person"
+			},
+			"legalEntity": {
+				"label": "Legal person"
+			},
+			"password": {
+				"error": {
+					"required": "Enter password"
+				},
+				"label": "Password"
+			},
+			"plantation": {
+				"label": "Plantation"
+			},
+			"plantationName": {
+				"error": {
+					"required": "Enter the plantation name "
+				},
+				"label": "Plantation Name"
+			},
+			"skype": {
+				"label": "Enter Skype Address"
+			}
+		},
+		"header": {
+			"login": "Login",
+			"register": "Register",
+			"restorePassword": "Restore password"
+		},
+		"login": {
+      "apiError": "Username and password do not match. This user is not registered. Verify the data entered or use the form to restore the password.",
+      "btn": {
+        "enter": "Enter",
+        "restore": "Reset password"
+      }
+		},
+		"register": {
+			"btnAddAlternative": "Add alternate contact form",
+			"btnRegister": "Registry",
+			"success": "The entry form has been successfully completed. Soon you will be contacted by one of our representatives."
+		},
+		"restore": {
+      "apiError": "This user does not exist. Check the information entered.",
+      "backToLogin": "Return to authorization",
+      "enterEmail": "Enter email address",
+      "next": "Next",
+      "success": "Your password has been changed. The new password was sent to the mail saved in the system."
+
+    }
+	}
+}

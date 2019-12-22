@@ -1,0 +1,71 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+
+  &-logo {
+    img {
+      display: block;
+      width: 81px;
+      height: auto;
+    }
+  }
+
+  &-title {
+    font-size: 14px;
+  }
+}
+
+.Tabs {
+  border-bottom: 0;
+}
+
+.Langs {
+  font-size: 14px;
+  line-height: 18px;
+
+  &-lang,
+  &-header {
+    cursor: pointer;
+  }
+
+  &-header {
+    padding: 7px 0;
+  }
+
+  &-lang {
+    display: block;
+    padding: 7px 16px;
+    text-align: center;
+  }
+
+  &-lang + &-lang {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .Header {
+    justify-content: flex-start;
+
+    &-menu {
+      flex: 1 1 auto;
+      margin: 0 44px;
+    }
+  }
+}
+
+
+@media (max-width: 640px) {
+  .Header {
+    &-logo {
+      position: absolute;
+      top: 20px;
+      left: 15px;
+    }
+    &-menu {
+      margin: 0;
+    }
+  }
+}

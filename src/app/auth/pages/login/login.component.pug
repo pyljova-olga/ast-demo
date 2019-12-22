@@ -1,0 +1,41 @@
+form.Form(
+  [formGroup]="loginForm",
+  (ngSubmit)='onSubmit()')
+  div
+    mat-form-field.Form-row(
+      appearance="outline")
+      mat-label {{'auth.fields.email.label' | translate}}
+      input(
+        matInput,
+        placeholder="{{'auth.fields.email.label' | translate}}",
+        formControlName="email")
+      mat-error(
+        *ngIf="email.invalid")
+        ng-container(
+          *ngIf="email.errors.required") {{'auth.fields.email.error.required' | translate}}
+        ng-container(
+          *ngIf="!email.errors.required && email.errors.email") {{'auth.fields.email.error.email' | translate}}
+  div
+    mat-form-field.Form-row(
+      appearance="outline")
+      mat-label {{'auth.fields.password.label' | translate}}
+      input(
+        matInput,
+        type='password',
+        placeholder="{{'auth.fields.password.label' | translate}}",
+        formControlName="password")
+      mat-error(
+        *ngIf="password.invalid && password.errors.required") {{'auth.fields.password.error.required' | translate}}
+
+  p.TextRed.Error(*ngIf='apiError') {{'auth.login.apiError' | translate}}
+
+  .BtnPanel
+    button(
+      mat-flat-button,
+      color="primary",
+      [disabled]='loginForm.status === "INVALID"',
+      type='submit') {{'auth.login.btn.enter' | translate}}
+    button(
+      mat-button,
+      color="primary",
+      routerLink='/auth/restore') {{'auth.login.btn.restore' | translate}}

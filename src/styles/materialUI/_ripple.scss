@@ -1,0 +1,11 @@
+.B2BF {
+  .mat-ripple-element {
+    background: $totalBlack!important;
+    opacity: 0.1!important;
+  }
+
+  .mat-radio-persistent-ripple,
+  .mat-checkbox-persistent-ripple {
+    opacity: 0!important;
+  }
+}
