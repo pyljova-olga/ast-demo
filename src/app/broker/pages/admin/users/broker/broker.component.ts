@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-broker',
+  selector: 'app-users-broker',
   templateUrl: './broker.component.pug',
   styleUrls: ['./broker.component.scss']
 })
-export class BrokerComponent implements OnInit {
+export class UsersBrokerComponent implements OnInit {
 
   constructor() { }
 

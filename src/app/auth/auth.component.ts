@@ -10,7 +10,7 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-  private url = '';
+  url = '';
   private subscription: Subscription;
 
   constructor(private router: Router) {

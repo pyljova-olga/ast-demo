@@ -11,12 +11,12 @@ import {AutoUnsubscribe} from 'ngx-auto-unsubscribe';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  private isLangPanelOpened = false;
-  private langsList = ['en', 'ru', 'es'];
-  private url = '';
+  isLangPanelOpened = false;
+  langsList = ['en', 'ru', 'es'];
+  url = '';
   private subscription: Subscription;
 
-  constructor(private translate: TranslateService,
+  constructor(public translate: TranslateService,
               private router: Router) {
     this.subscription = this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {

@@ -107,7 +107,7 @@ form.Form(
 
   div(
     formArrayName="alternatives",
-    *ngFor="let alternative of registerForm.get('alternatives').controls; let i = index;")
+    *ngFor="let alternative of registerForm.get('alternatives')['controls']; let i = index;")
 
     div(
       [formGroupName]="i")

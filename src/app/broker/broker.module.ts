@@ -24,6 +24,7 @@ import { MessagesComponent } from './pages/admin/content/messages/messages.compo
 import { FaqComponent } from './pages/admin/content/faq/faq.component';
 import { ListComponent } from './pages/admin/catalog/list/list.component';
 import { CatalogRequestsComponent } from './pages/admin/catalog/requests/requests.component';
+import { UsersBrokerComponent } from './pages/admin/users/broker/broker.component';
 import { ClientsComponent } from './pages/admin/users/clients/clients.component';
 import { PlantationsComponent } from './pages/admin/users/plantations/plantations.component';
 import { RequestComponent } from './pages/admin/users/requests/request/request.component';
@@ -138,7 +139,7 @@ const routes: Routes = [
             children: [
               {
                 path: 'broker',
-                component: BrokerComponent
+                component: UsersBrokerComponent
               }, {
                 path: 'clients',
                 component: ClientsComponent
@@ -173,7 +174,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [BrokerComponent, TradeComponent, HistoryComponent, OrdersComponent, AuctionComponent, PaidComponent, ShippedComponent, ClaimsComponent, AdminComponent, SettingsComponent, ContentComponent, CatalogComponent, UsersComponent, BasicComponent, CargoComponent, BannerComponent, NewsComponent, SalesComponent, MessagesComponent, FaqComponent, ListComponent, CatalogRequestsComponent, ClientsComponent, PlantationsComponent, RequestComponent, RequestsComponent],
+  declarations: [UsersBrokerComponent, BrokerComponent, TradeComponent, HistoryComponent, OrdersComponent, AuctionComponent, PaidComponent, ShippedComponent, ClaimsComponent, AdminComponent, SettingsComponent, ContentComponent, CatalogComponent, UsersComponent, BasicComponent, CargoComponent, BannerComponent, NewsComponent, SalesComponent, MessagesComponent, FaqComponent, ListComponent, CatalogRequestsComponent, ClientsComponent, PlantationsComponent, RequestComponent, RequestsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
