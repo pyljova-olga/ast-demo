@@ -10,6 +10,7 @@ form.Form(
       mat-label {{'auth.fields.email.label' | translate}}
       input(
         matInput,
+        (input)="resetApiError()",
         placeholder="{{'auth.fields.email.label' | translate}}",
         formControlName="email")
       mat-error(

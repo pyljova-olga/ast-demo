@@ -23,6 +23,17 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.apiError = 'error';
+    this.email.setErrors({'apiError': true});
+    this.password.setErrors({'apiError': true});
   }
+
+  resetApiError() {
+    this.apiError = '';
+    this.email.setErrors({'apiError': null});
+    this.password.setErrors({'apiError': null});
+    this.email.updateValueAndValidity();
+    this.password.updateValueAndValidity();
+  }
+
 
 }

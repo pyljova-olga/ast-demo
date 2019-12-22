@@ -22,8 +22,15 @@ export class RestoreComponent implements OnInit {
     if(this.restoreForm.get('email').value === 'admin@admin.ru') {
       this.result = 'success';
     } else {
+      this.email.setErrors({'apiError': true});
       this.result = 'error';
     }
+  }
+
+  resetApiError() {
+    this.result = '';
+    this.email.setErrors({'apiError': null});
+    this.email.updateValueAndValidity();
   }
 
 }
