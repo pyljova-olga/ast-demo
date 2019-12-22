@@ -24,7 +24,7 @@
   .mat-button-base {
     &.mat-primary, &.mat-accent, &.mat-warn, &[disabled] {
       &[disabled] {
-        background: $grey-default;
+        background: $grey-dark;
         color: $white;
       }
     }
