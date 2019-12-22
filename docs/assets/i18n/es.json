@@ -1,0 +1,93 @@
+{
+	"auth": {
+		"fields": {
+			"agree": {
+				"error": {
+					"required": "Подтвердите согласие на обработку данных"
+				},
+				"label1": "Estoy de acuerdo con ",
+				"label2": "el uso ",
+				"label3": " de mis datos personales."
+			},
+			"alternative": {
+				"label": "Añadir forma de contacto alterna"
+			},
+			"client": {
+				"label": "Comprador"
+			},
+			"companyName": {
+				"error": {
+					"required": "Ingrese el nombre de la compañía"
+				},
+				"label": "Nombre de la compañía"
+			},
+			"contactName": {
+				"error": {
+					"required": "Persona de contacto"
+				},
+				"label": "Apellidos y nombres de persona de contacto"
+			},
+			"contactPhone": {
+				"error": {
+					"required": "Ingrese el número de contacto"
+				},
+        "label": "Número de contacto"
+			},
+			"email": {
+				"error": {
+					"email": "Некорректный email",
+					"required": "Укажите email"
+				},
+				"label": "Email"
+			},
+			"individual": {
+				"label": "Persona natural"
+			},
+			"legalEntity": {
+				"label": "Persona jurídica"
+			},
+			"password": {
+				"error": {
+					"required": "Укажите пароль"
+				},
+				"label": "Пароль"
+			},
+			"plantation": {
+				"label": "Plantación"
+			},
+			"plantationName": {
+				"error": {
+					"required": "Ingrese el nombre de la plantación"
+				},
+				"label": "Nombre de la plantación"
+			},
+			"skype": {
+				"label": "Ingrese dirección Skype"
+			}
+		},
+		"header": {
+			"login": "Entrar",
+			"register": "Registrarse",
+			"restorePassword": "Restaure la contraseña"
+		},
+		"login": {
+      "apiError": "Nombre de usuario y contraseña no coinciden. Este usuario no está registrado. Verifique los datos ingresados o utilice el formato para restaurar la contraseña.",
+      "btn": {
+        "enter": "Entrar",
+        "restore": "Restaure la contraseña"
+      }
+		},
+		"register": {
+			"btnAddAlternative": "Añadir forma de contacto alterna",
+			"btnRegister": "Registro",
+			"success": "El formulario de ingreso ha sido completado con éxito. Muy pronto será contactado por uno de nuestros representantes."
+		},
+		"restore": {
+      "apiError": "Este usuario no existe. Revise la información ingresada.",
+      "backToLogin": "Regresar a la autorización",
+      "enterEmail": "Dirección de correo",
+      "next": "Adelante",
+      "success": "Su contraseña ha sido cambiada. La nueva contraseña fue enviada al correo guardado en el sistema."
+    }
+	}
+}
