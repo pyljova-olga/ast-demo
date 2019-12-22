@@ -30,6 +30,7 @@ form.Form(
       type='submit') {{'auth.restore.next' | translate}}
     button(
       mat-button,
+      type='button',
       color="primary",
       routerLink='/auth/login') {{'auth.restore.backToLogin' | translate}}
 
@@ -38,6 +39,7 @@ div.Result.Result--success(
   p {{'auth.restore.success' | translate}}
   p
     button(
+      type='button',
       routerLink='/auth/login',
       mat-flat-button,
       color='primary') {{'auth.restore.backToLogin' | translate}}
