@@ -35,10 +35,13 @@ form.Form(
     button(
       mat-flat-button,
       color="primary",
-      [disabled]='loginForm.status === "INVALID"',
       type='submit') {{'auth.login.btn.enter' | translate}}
     button(
       mat-button,
       type='button',
       color="primary",
       routerLink='/auth/restore') {{'auth.login.btn.restore' | translate}}
+
+
+
+    // div(number-input, [step]='0.01', [(defaultValue)]='testNumber', )

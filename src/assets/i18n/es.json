@@ -35,8 +35,8 @@
 			},
 			"email": {
 				"error": {
-					"email": "Некорректный email",
-					"required": "Укажите email"
+					"email": " Ingrese un correo electrónico válido",
+					"required": " Ingrese un correo electrónico válido"
 				},
 				"label": "Email"
 			},
@@ -50,7 +50,7 @@
 				"error": {
 					"required": "Укажите пароль"
 				},
-				"label": "Пароль"
+				"label": "Contraseña"
 			},
 			"plantation": {
 				"label": "Plantación"

@@ -35,16 +35,22 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.registerForm = this.fb.group({
-      isPlantation: [false],
-      isLegalEntity: [true],
+      isPlantation: [false, {
+        updateOn: 'change'
+      }],
+      isLegalEntity: [true, {
+        updateOn: 'change'
+      }],
       plantationName: ['', [conditionalValidator(() => this.registerForm.get('isPlantation').value, Validators.required)]],
       companyName: ['', [conditionalValidator(() => ((!this.registerForm.get('isPlantation').value) && (this.registerForm.get('isLegalEntity').value === true)), Validators.required)]],
       contactName: ['', [Validators.required]],
       contactPhone: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       skype: [''],
-      agreeWithTermsAndConditions: [false, [Validators.pattern('true')]],
+      agreeWithTermsAndConditions: ['', [Validators.requiredTrue]],
       alternatives: this.fb.array([])
+    }, {
+      updateOn: 'submit'
     });
 
     this.isPlantationSubscription = this.registerForm.get('isPlantation').valueChanges
@@ -79,6 +85,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    this.result = 'success';
+    console.log(this.agree)
+    if(this.registerForm.status === 'VALID') {
+      this.result = 'success';
+    }
   }
 }

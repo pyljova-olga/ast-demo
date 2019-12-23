@@ -1,4 +1,5 @@
 form.Form(
+  #regForm='ngForm',
   (ngSubmit)='onSubmit()',
   *ngIf='result !== "success"',
   [formGroup]="registerForm")
@@ -137,13 +138,12 @@ form.Form(
       span {{'auth.fields.agree.label1' | translate}}
       a.Green(href="#") {{'auth.fields.agree.label2' | translate}}
       span {{'auth.fields.agree.label3' | translate}}
-    mat-error(
-      *ngIf="agree.invalid && agree.errors.required") {{'auth.fields.agree.error.required' | translate}}
+      mat-error(
+        *ngIf="regForm.submitted && agree.invalid") {{'auth.fields.agree.error.required' | translate}}
 
   .BtnPanel
     button(
       mat-flat-button,
-      [disabled]='registerForm.status === "INVALID"',
       color="primary",
       type='submit') {{'auth.register.btnRegister' | translate}}
 

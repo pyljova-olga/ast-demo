@@ -15,15 +15,19 @@ export class RestoreComponent implements OnInit {
   ngOnInit() {
     this.restoreForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
+    }, {
+      updateOn: 'submit'
     });
   }
 
   onSubmit() {
-    if(this.restoreForm.get('email').value === 'admin@admin.ru') {
-      this.result = 'success';
-    } else {
-      this.email.setErrors({'apiError': true});
-      this.result = 'error';
+    if(this.restoreForm.status === 'VALID') {
+      if (this.restoreForm.get('email').value === 'admin@admin.ru') {
+        this.result = 'success';
+      } else {
+        this.email.setErrors({'apiError': true});
+        this.result = 'error';
+      }
     }
   }
 

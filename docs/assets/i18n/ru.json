@@ -35,8 +35,8 @@
 			},
 			"email": {
 				"error": {
-					"email": "Некорректный email",
-					"required": "Укажите email"
+					"email": "Укажите корректный email",
+					"required": "Укажите корректный email"
 				},
 				"label": "Email"
 			},

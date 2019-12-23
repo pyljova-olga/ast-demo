@@ -15,4 +15,11 @@
     margin-top: 3px;
     margin-right: 12px;
   }
+
+  .mat-checkbox-label {
+    .mat-error {
+      margin-left: -28px;
+      font-size: 75%;
+    }
+  }
 }

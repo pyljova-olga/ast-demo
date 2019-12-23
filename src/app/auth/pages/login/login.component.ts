@@ -8,6 +8,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   apiError: string;
+  testNumber = 0.254;
 
   constructor(private fb: FormBuilder) { }
 
@@ -18,13 +19,19 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
+    }, {
+        updateOn: 'submit'
     });
   }
 
   onSubmit() {
-    this.apiError = 'error';
-    this.email.setErrors({'apiError': true});
-    this.password.setErrors({'apiError': true});
+    if(this.loginForm.status === 'VALID') {
+      this.apiError = 'error';
+      this.email.setErrors({'apiError': true});
+      this.password.setErrors({'apiError': true});
+    } else {
+      // (this.loginForm as any)._setUpdateStrategy({updateOn: 'blur'});
+    }
   }
 
   resetApiError() {

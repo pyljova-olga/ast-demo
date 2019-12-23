@@ -1,0 +1,11 @@
+mat-form-field.Form-row(
+  appearance="outline")
+  mat-label Label
+  input(
+    matInput,
+    (input)='onInput($event)',
+    (change)='onChange()',
+    [formControl]="numberField")
+
+button((click)='change("plus")', type='button') +
+button((click)='change("minus")', type='button') -

@@ -27,7 +27,6 @@ form.Form(
     button(
       mat-flat-button,
       color="primary",
-      [disabled]='restoreForm.status === "INVALID"',
       type='submit') {{'auth.restore.next' | translate}}
     button(
       mat-button,

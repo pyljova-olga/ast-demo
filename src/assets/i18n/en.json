@@ -35,8 +35,8 @@
 			},
 			"email": {
 				"error": {
-					"email": "Invalid email",
-					"required": "Enter email"
+					"email": "Please enter a valid email",
+					"required": "Please enter a valid email"
 				},
 				"label": "Email"
 			},
