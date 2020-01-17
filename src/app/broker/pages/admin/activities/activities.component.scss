@@ -1,0 +1,65 @@
+@import '../../../../../styles/variables';
+
+.Activity {
+  &-period {
+    margin: 16px 0 19px;
+  }
+
+  &-row {
+    display: flex;
+  }
+
+  &-col {
+    flex: 0 0 50%;
+    padding-right: 70px;
+
+    h2 {
+      margin-bottom: 9px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  &-submit {
+    margin-bottom: 30px;
+  }
+}
+
+.List {
+  position: relative;
+  margin: 0 -26px -10px -10px;
+  padding: 20px 40px 20px 10px;
+  background: $grey-default;
+
+  &-group {
+    margin-bottom: 43px;
+  }
+
+  &-item {
+    display: flex;
+    line-height: 28px;
+  }
+
+  &-date {
+    margin-bottom: 23px;
+  }
+
+  &-time {
+    flex: 0 0 60px;
+    color: $grey-dark;
+  }
+
+  &-description {
+    flex: 1 1 auto;
+  }
+
+  &-export {
+    position: absolute;
+    right: 63px;
+    top: 20px;
+  }
+}

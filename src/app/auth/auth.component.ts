@@ -5,7 +5,7 @@ import {Subscription} from 'rxjs';
 
 @AutoUnsubscribe()
 @Component({
-  selector: 'app-auth',
+  selector: '[app-auth]',
   templateUrl: './auth.component.pug',
   styleUrls: ['./auth.component.scss']
 })

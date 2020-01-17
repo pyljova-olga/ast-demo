@@ -1,0 +1,39 @@
+.B2BF {
+  .mat-slider-track-background {
+    background: $grey-dark;
+  }
+
+  .mat-primary .mat-slider-track-fill,
+  .mat-primary .mat-slider-thumb,
+  .mat-primary .mat-slider-thumb-label {
+    background-color: $green-slider!important;
+  }
+
+  .mat-primary .mat-slider-thumb,
+  .mat-slider:not(.mat-slider-disabled):not(.mat-slider-sliding) .mat-slider-thumb {
+    transform: scale(0.5) rotate(-135deg)!important;
+    border-radius: 50% 50% 0;
+  }
+
+  .mat-primary .mat-slider-thumb-label {
+    border-radius: 50% 50% 0!important;
+    transform: rotate(45deg)!important;
+    top: -40px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 100%;
+      width: 2px;
+      height: 8px;
+      margin: -3px 0px 0 0px;
+      background: $green-slider;
+      transform: rotate(-45deg)
+    }
+
+    .mat-slider-thumb-label-text {
+      opacity: 1!important;
+    }
+  }
+}

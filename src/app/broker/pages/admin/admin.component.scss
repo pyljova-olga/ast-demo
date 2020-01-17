@@ -1,0 +1,44 @@
+@import '../../../../styles/variables';
+
+.Sidebar {
+  h1 {
+    padding: 39px 26px 37px;
+    margin: 0;
+  }
+
+  &-menu {
+    li,
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    padding: 0 26px;
+    border-bottom: 1px solid $grey-default;
+    background: transparent;
+    color: $green;
+    text-decoration: none;
+    transition: all linear 0.2s;
+
+    &:hover {
+      color: $green-light;
+    }
+
+    &--active,
+    &--active:hover {
+      background: $green;
+      color: $white;
+    }
+
+    .mat-icon {
+      margin-right: 16px;
+    }
+  }
+}

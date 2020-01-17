@@ -1,0 +1,174 @@
+.Activity
+    form.Activity-form.Form([formGroup]='settingsForm')
+        .Activity-period
+            mat-button-toggle-group.BtnToggleGroup.BtnToggleGroup--smaller(
+                formControlName="period")
+
+                mat-button-toggle(
+                    [value]="1") Неделя
+                mat-button-toggle(
+                    [value]="2") Месяц
+                mat-button-toggle(
+                    [value]="3") Полгода
+                mat-button-toggle(
+                    [value]="4") Все время
+
+        .Activity-row
+            .Activity-col
+                h2 Пользователи
+                p Добавляйте необходимых пользователей по одному (без выбора выводится активность по всем пользователям):
+                .Activity-item
+                    mat-form-field.Form-field--white.Form-row(
+                        appearance="outline")
+
+                        input(placeholder='Выберите пользователя',
+                            matInput,
+                            #userInput,
+                            formControlName='user',
+                            [matAutocomplete]='userAuto',
+                            (matChipInputTokenEnd)='add($event, user, users)')
+                        mat-icon.TextGreen(
+                            matSuffix,
+                            [svgIcon]='userAuto.isOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"')
+
+                        mat-autocomplete(#userAuto='matAutocomplete',
+                            (optionSelected) = 'selected($event, user, users)')
+                            mat-option(
+                                *ngFor='let user of filteredUsers | async',
+                                [value] = 'user')
+                                | {{user}}
+
+                    mat-chip-list(
+                        aria-label='Fruit selection')
+                        mat-chip(*ngFor='let user of users',
+                            [selectable] = 'true',
+                            [removable] = 'true',
+                            (removed) = 'remove(user, users)')
+                            | {{user}}
+                            mat-icon(
+                                matChipRemove) cancel
+            .Activity-col
+                h2 Тип активности
+                p Добавляйте необходимый тип активности по одному (без выбора выводятся все активности):
+
+                .Activity-item
+                    mat-form-field.Form-field--white.Form-row(
+                        appearance="outline")
+
+                        input(placeholder='Выберите активность',
+                            matInput,
+                            #userInput,
+                            formControlName='activity',
+                            [matAutocomplete]='activityAuto',
+                            (matChipInputTokenEnd)='add($event, activity, activities)')
+                        mat-icon.TextGreen(
+                            matSuffix,
+                            [svgIcon]='activityAuto.isOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"')
+
+                        mat-autocomplete(#activityAuto='matAutocomplete',
+                            (optionSelected) = 'selected($event, activity, activities)')
+                            mat-option(
+                                *ngFor='let activity of filteredActivities | async',
+                                [value] = 'activity')
+                                | {{activity}}
+
+                    mat-chip-list(
+                        aria-label='Fruit selection')
+                        mat-chip(*ngFor='let activity of activities',
+                            [selectable] = 'true',
+                            [removable] = 'true',
+                            (removed) = 'remove(activity, activities)')
+                            | {{activity}}
+                            mat-icon(
+                                matChipRemove) cancel
+        .Activity-submit
+            button(
+                mat-flat-button,
+                color='primary',
+                type='submit') Показать активность
+
+    .List
+        .List-export
+            a.Green Экспортировать отчёт
+        .List-group
+            .List-date
+                b 15.07.2019
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин вошёл в систему;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин добавил нового пользователя с ролью менеджер Дмитриевский Иван;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин вошёл в систему;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин добавил нового пользователя с ролью менеджер Дмитриевский Иван;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин вошёл в систему;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин добавил нового пользователя с ролью менеджер Дмитриевский Иван;
+
+        .List-group
+            .List-date
+                b 15.07.2019
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин вошёл в систему;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин добавил нового пользователя с ролью менеджер Дмитриевский Иван;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин вошёл в систему;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин добавил нового пользователя с ролью менеджер Дмитриевский Иван;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин вошёл в систему;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин добавил нового пользователя с ролью менеджер Дмитриевский Иван;
+
+        .List-group
+            .List-date
+                b 15.07.2019
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин вошёл в систему;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин добавил нового пользователя с ролью менеджер Дмитриевский Иван;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин вошёл в систему;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин добавил нового пользователя с ролью менеджер Дмитриевский Иван;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин вошёл в систему;
+
+            .List-item
+                .List-time 10.02
+                .List-description Пользователь Константинопольский Константин добавил нового пользователя с ролью менеджер Дмитриевский Иван;
+
+

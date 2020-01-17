@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 @Component({
-  selector: 'app-restore',
+  selector: '[app-restore]',
   templateUrl: './restore.component.pug',
   styleUrls: ['./restore.component.scss']
 })

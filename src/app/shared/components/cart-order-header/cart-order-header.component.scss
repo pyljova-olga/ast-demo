@@ -1,0 +1,24 @@
+.OrderHeader {
+  display: flex;
+  justify-content: space-between;
+
+  &-left {
+    display: flex;
+    align-items: center;
+  }
+
+  &-country {
+    margin-right: 10px;
+
+    img {
+      display: block;
+      width: 24px;
+      height: auto;
+    }
+  }
+
+  &-number {
+    font-weight: 700;
+    font-size: 14px;
+  }
+}

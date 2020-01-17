@@ -1,1 +1,45 @@
-p admin works!
+.Workplace-content
+    .Workplace-sidebar.Sidebar
+        h1 Панель администрирования
+        nav.Sidebar-menu
+            ul
+                li
+                    a.Sidebar-item(
+                        routerLink="/broker/admin/users",
+                        routerLinkActive="Sidebar-item--active"
+                    )
+                        mat-icon(svgIcon='menu-users')
+                        | Пользователи
+                li
+                    a.Sidebar-item(
+                        routerLink="/broker/admin/catalog",
+                        routerLinkActive="Sidebar-item--active"
+                    )
+                        mat-icon(svgIcon='menu-catalog')
+                        | Каталог продукции
+                li
+                    a.Sidebar-item(
+                        routerLink="/broker/admin/content",
+                        routerLinkActive="Sidebar-item--active"
+                    )
+                        mat-icon(svgIcon='menu-content')
+                        | Управление контентом
+
+                li
+                    a.Sidebar-item(
+                        routerLink="/broker/admin/settings",
+                        routerLinkActive="Sidebar-item--active"
+                    )
+                        mat-icon(svgIcon='menu-settings')
+                        | Настройка платформы
+                li
+                    a.Sidebar-item(
+                        routerLink="/broker/admin/activities",
+                        routerLinkActive="Sidebar-item--active"
+                    )
+                        mat-icon(svgIcon='menu-activity')
+                        | Активность
+    .Workplace-main
+        router-outlet
+
+// div(right-modal) modal example

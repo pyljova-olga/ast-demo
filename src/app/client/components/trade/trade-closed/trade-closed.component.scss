@@ -1,0 +1,29 @@
+.TradeClosed {
+  display: flex;
+  flex-direction: column;
+  width: 626px;
+  margin: 126px auto;
+  padding: 0 10px;
+  text-align: center;
+
+  .mat-progress-spinner {
+    margin: 0 auto;
+  }
+
+  &-loader {
+    margin-bottom: 33px;
+  }
+
+  &-header {
+    margin-bottom: 4px
+  }
+
+  &-description {
+    margin-bottom: 20px;
+  }
+
+  &-text {
+    font-size: 14px;
+    line-height: 1.28;
+  }
+}

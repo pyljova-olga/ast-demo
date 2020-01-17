@@ -18,6 +18,7 @@ export class AuthGuard implements CanActivate {
   ) {
 
     // return this.userService.isAuthenticated.pipe(take(1));
-    return this.router.parseUrl('/auth'); // for not authorized
+    // return this.router.parseUrl('/auth'); // for not authorized
+    return true;
   }
 }

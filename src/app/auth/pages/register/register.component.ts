@@ -8,7 +8,7 @@ import {Subscription} from 'rxjs';
 
 @AutoUnsubscribe()
 @Component({
-  selector: 'app-register',
+  selector: '[app-register]',
   templateUrl: './register.component.pug',
   styleUrls: ['./register.component.scss']
 })

@@ -1,0 +1,22 @@
+.Item
+    .Item-icon
+        button(
+            mat-icon-button,
+            color='primary',
+            type='button',
+            (click)='toggleItem($event)')
+            mat-icon(
+                [svgIcon]='isOpened ? "minus-in-circle" : "plus-in-circle"')
+    .Item-text
+        a.Green(
+            (click)='toggleItem($event)') Alstromeria
+    .Item-actions(
+        *ngIf='isOpened && type !== "request"')
+        button(
+            mat-button,
+            color='primary',
+            type='button') Изменить
+        button(
+            mat-button,
+            color='warn',
+            type='button') Удалить

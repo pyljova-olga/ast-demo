@@ -1,0 +1,52 @@
+@import '../../../../../styles/variables';
+
+.Empty {
+  img {
+    display: block;
+    width: 360px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.Order {
+  &-header {
+    margin: 0 0 5px 0;
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+  }
+}
+
+.Plantation {
+  background: $white;
+
+  & + & {
+    margin-top: 5px;
+  }
+
+  &--opened {
+    box-shadow: $panel-shadow;
+  }
+
+  &-type {
+    padding: 13px 0 6px 0;
+    margin: 0 21px 7px 17px;
+    border-bottom: 1px solid $green;
+    font-size: 14px;
+    line-height: 18px;
+
+    &:first-child {
+      padding-top: 6px;
+    }
+  }
+
+  &-item {
+    padding: 2px 21px 2px 17px;
+    border-bottom: 1px solid $grey-default;
+  }
+}

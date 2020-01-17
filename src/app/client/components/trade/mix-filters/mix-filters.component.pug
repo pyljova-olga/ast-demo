@@ -1,0 +1,127 @@
+.Filters([formGroup]='filtersForm')
+    .Filters-row
+        .Filters-left
+            mat-form-field.Form-field--white.Filters-item(
+                appearance="outline")
+                mat-select(
+                    formControlName="country",
+                    :disableOptionCentering='true',
+                    placeholder='Страна')
+                    mat-option -
+                    mat-option(*ngFor="let country of countries", [value]="country") {{country.name}}
+
+            .Filters-item
+                mat-form-field.Form-field--white.Form-row(
+                    appearance="outline")
+
+                    input(placeholder='Плантация',
+                        matInput,
+                        #fruitInput,
+                        [formControl]='fruitCtrl',
+                        [matAutocomplete]='auto',
+                        (matChipInputTokenEnd)='add($event)')
+                    mat-icon.TextGreen(
+                        matSuffix,
+                        [svgIcon]='auto.isOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"')
+
+                    mat-autocomplete(#auto='matAutocomplete',
+                        (optionSelected) = 'selected($event)')
+                        mat-option(
+                            *ngFor='let fruit of filteredFruits | async',
+                            [value] = 'fruit')
+                            | {{fruit}}
+
+                mat-chip-list(
+                    aria-label='Fruit selection')
+                    mat-chip(*ngFor='let fruit of fruits',
+                        [selectable] = 'selectable',
+                        [removable] = 'removable',
+                        (removed) = 'remove(fruit)')
+                        | {{fruit}}
+                        mat-icon(
+                            matChipRemove,
+                            *ngIf = 'removable') cancel
+
+            mat-form-field.Form-field--white.Filters-item(
+                appearance="outline")
+                mat-select(
+                    [formControl]="country",
+                    :disableOptionCentering='true',
+                    placeholder='Тип товара')
+                    mat-option -
+                    mat-option(*ngFor="let country of countries", [value]="country") {{country.name}}
+
+            button(
+                *ngIf='!showDetail',
+                mat-button,
+                color='primary',
+                (click)='toggleDetails()'
+            ) Еще фильтры
+
+        .Filters-right
+            button(
+                type='button',
+                mat-flat-button,
+                color='primary'
+            ) Показать
+            button(
+                type='button',
+                mat-button,
+                color='primary',
+                (click)='cancel()'
+            ) Очистить
+
+    .Filters-row(*ngIf='showDetail')
+        .Filters-left
+            mat-form-field.Form-field--white.Filters-item(
+                appearance="outline")
+                mat-select(
+                    [formControl]="country",
+                    :disableOptionCentering='true',
+                    placeholder='Сорт товара')
+                    mat-option -
+                    mat-option(*ngFor="let country of countries", [value]="country") {{country.name}}
+
+            .Filters-item.Filters-item--wide.Slider(
+                ddpanel,
+                showEvent='click',
+                [(isOpened)]='isStemPricePanelOpened',
+                [showArrow]='false')
+                mat-form-field.Form-field--white.Slider-header(
+                    ddpanel-header,
+                    appearance="outline")
+                    input(placeholder='Цена за стебель',
+                        autocomplete='off',
+                        [value]='price.value',
+                        (input)='formatNumber($event, "price")',
+                        formControlName="price",
+                        matInput)
+                    mat-icon.TextGreen(
+                        matSuffix,
+                        [svgIcon]='isStemPricePanelOpened ? "keyboard_arrow_up" : "keyboard_arrow_down"')
+
+                div.Slider-panel(ddpanel-body)
+                    mat-slider(
+                        [max]="2",
+                        [min]="0",
+                        [step]="0.01",
+                        [value]='price.value',
+                        [thumbLabel]="true",
+                        color='primary',
+                        formControlName="price")
+
+            mat-form-field.Form-field--white.Filters-item(
+                appearance="outline")
+                mat-select(
+                    [formControl]="country",
+                    :disableOptionCentering='true',
+                    placeholder='Сумма')
+                    mat-option -
+                    mat-option(*ngFor="let country of countries", [value]="country") {{country.name}}
+
+            button(
+                type='button',
+                mat-button,
+                color='primary',
+                (click)='toggleDetails()'
+            ) Скрыть дополнительные фильтры

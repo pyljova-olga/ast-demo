@@ -1,0 +1,46 @@
+.Filters {
+  &-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &-left,
+  &-right {
+    display: flex;
+    align-items: flex-start;
+
+    & > button {
+      margin-top:15px;
+    }
+  }
+
+  &-item {
+    width: 155px;
+    margin-bottom: -33px;
+    margin-right: 10px;
+
+    &--wide {
+      width: 205px;
+    }
+  }
+
+  &-row + &-row {
+    margin-top: 23px;
+  }
+}
+
+.Slider {
+  &-header {
+    max-width: 100%;
+    margin-bottom: -30px;
+  }
+
+  &-panel {
+    padding: 20px 5px 0px;
+  }
+
+  .mat-slider {
+    width: 100%;
+  }
+}

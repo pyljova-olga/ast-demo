@@ -1,0 +1,16 @@
+.RightModal
+    .RightModal-background((click)='closeModal()')
+    .RightModal-main
+        .RightModal-header.Header(
+            *ngIf='titleText')
+            .Header-close(
+                *ngIf='isClosable')
+                button(
+                    mat-icon-button,
+                    color='primary',
+                    (click)='closeModal()',
+                    type='button')
+                    mat-icon(svgIcon="close" )
+            .Header-title {{titleText}}
+        .RightModal-content
+            ng-content

@@ -1,7 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import {FormBuilder, Validators, FormGroup, FormControl} from '@angular/forms';
+import {getMatAutocompleteMissingPanelError} from '@angular/material';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+
+// TEMP
+export interface User {
+  name: string;
+}
+export interface Animal {
+  name: string;
+  sound: string;
+}
+
 @Component({
-  selector: 'app-login',
+  selector: '[app-login]',
   templateUrl: './login.component.pug',
   styleUrls: ['./login.component.scss']
 })
@@ -9,6 +22,28 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   apiError: string;
   testNumber = 0.254;
+
+  // TEMP
+
+  date = new FormControl(new Date());
+  serializedDate = new FormControl((new Date()).toISOString());
+
+  animalControl = new FormControl('', [Validators.required]);
+  selectFormControl = new FormControl('', Validators.required);
+  animals: Animal[] = [
+    {name: 'Dog', sound: 'Woof!'},
+    {name: 'Cat', sound: 'Meow!'},
+    {name: 'Cow', sound: 'Moo!'},
+    {name: 'Fox', sound: 'Wa-pa-pa-pa-pa-pa-pow!'},
+  ];
+
+  myControl = new FormControl();
+  options: User[] = [
+    {name: 'Mary'},
+    {name: 'Shelley'},
+    {name: 'Igor'}
+  ];
+  filteredOptions: Observable<User[]>;
 
   constructor(private fb: FormBuilder) { }
 
@@ -22,6 +57,14 @@ export class LoginComponent implements OnInit {
     }, {
         updateOn: 'submit'
     });
+
+    // TEMP
+    this.filteredOptions = this.myControl.valueChanges
+        .pipe(
+            startWith(''),
+            map(value => typeof value === 'string' ? value : value.name),
+            map(name => name ? this._filter(name) : this.options.slice())
+        );
   }
 
   onSubmit() {
@@ -42,5 +85,16 @@ export class LoginComponent implements OnInit {
     this.password.updateValueAndValidity();
   }
 
+  // TEMP
+
+  displayFn(user?: User): string | undefined {
+    return user ? user.name : undefined;
+  }
+
+  private _filter(name: string): User[] {
+    const filterValue = name.toLowerCase();
+
+    return this.options.filter(option => option.name.toLowerCase().indexOf(filterValue) === 0);
+  }
 
 }

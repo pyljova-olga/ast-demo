@@ -1,0 +1,35 @@
+.B2BF {
+  .mat-chip.mat-standard-chip {
+
+    &:after {
+      display: none;
+    }
+
+    &:not(.mat-chip-disabled) {
+      background: #e4e4e4;
+
+      .mat-chip-remove,
+      .mat-chip-remove:hover {
+        color: rgba(0, 0, 0, 0.6);
+        opacity: 1;
+      }
+
+      &:active {
+        box-shadow: none;
+      }
+    }
+  }
+
+  input.mat-chip-input {
+    margin: 0;
+  }
+
+  .Form-row {
+    & + .mat-chip-list {
+      .mat-chip-list-wrapper {
+        margin-top: -30px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+}

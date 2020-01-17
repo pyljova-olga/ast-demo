@@ -1,66 +1,143 @@
 .B2BF {
-  .mat-button-toggle-group {
+  .mat-button-toggle-group-appearance-standard.mat-button-toggle-group {
     border: 0;
-  }
+    .mat-button-toggle-focus-overlay {
+      display: none;
+    }
 
-  .mat-button-toggle-focus-overlay {
-    display: none;
-  }
+    .mat-form-field-invalid {
+      .mat-button-toggle {
+        .mat-button-toggle-label-content {
+          color: $red;
+        }
+      }
 
-  .mat-form-field-invalid {
+      .mat-button-toggle + .mat-button-toggle {
+        border-left: solid 1px $red;
+      }
+
+      .mat-button-toggle-group {
+        border: solid 1px $red;
+      }
+    }
     .mat-button-toggle {
+      background-color: transparent;
+      border: solid 1px $green;
+      border-right: 0;
+
+      &:last-child {
+        margin-right: 0;
+        border-radius: 0 4px 4px 0;
+        border-right: 1px solid $green;
+      }
+
+      &:first-child {
+        border-radius: 4px 0 0 4px;
+      }
+
       .mat-button-toggle-label-content {
-        color: $red;
+        color: $green;
       }
     }
 
-    .mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle {
-      border-left: solid 1px $red;
+    .mat-button-toggle + .mat-button-toggle {
+      border-left-color: $green;
     }
 
-    .mat-button-toggle-group {
-      border: solid 1px $red;
-    }
-  }
-  .mat-button-toggle {
-    background-color: transparent;
-    border: solid 1px $green;
-    margin-right: -1px;
+    .mat-button-toggle:hover {
+      background-color: transparent;
+      border-color: $green-light;
 
-    &:last-child {
-      margin-right: 0;
-      border-radius: 0 4px 4px 0;
-    }
+      & + .mat-button-toggle {
+        border-left-color: $green-light;
+      }
 
-    &:first-child {
-      border-radius: 4px 0 0 4px;
+      .mat-button-toggle-label-content {
+        color: $green-light;
+      }
     }
 
-    .mat-button-toggle-label-content {
-      color: $green;
-    }
-  }
 
-  .mat-button-toggle:hover {
-    background-color: transparent;
-    border: solid 1px $green-light;
+    .mat-button-toggle-checked,
+    .mat-button-toggle-checked:hover {
+      background-color: $green;
+      border-color: $green;
 
-    .mat-button-toggle-label-content {
-      color: $green-light;
+      .mat-button-toggle-label-content {
+        color: $white;
+      }
     }
   }
 
-  .mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle {
-    border-left: solid 1px $green;
+
+
+  .BtnToggleGroup--smaller {
+    .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+      line-height: 33px;
+    }
+
+    &.mat-button-toggle-group-appearance-standard,
+    &.mat-button-toggle-standalone.mat-button-toggle-appearance-standard{
+      border-radius: 2px;
+    }
+
+    .mat-button-toggle {
+      &:last-child {
+        border-radius: 0 2px 2px 0;
+      }
+
+      &:first-child {
+        border-radius: 2px 0 0 2px;
+      }
+    }
   }
 
-  .mat-button-toggle-checked,
-  .mat-button-toggle-checked:hover {
-    background-color: $green;
-    border: solid 1px $green;
+  .BtnToggleGroupSlider {
+    .mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
+      flex-wrap: wrap;
+      border-radius: 0;
 
-    .mat-button-toggle-label-content {
-      color: $white;
+      .mat-button-toggle {
+        border: solid 1px $grey-light;
+        border-right: 0;
+        border-radius: 0;
+
+        &:last-child {
+          border-right: 1px solid $grey-light;
+        }
+
+        .mat-button-toggle-label-content {
+          line-height: 33px;
+          padding: 0 5px;
+          color: $black;
+        }
+      }
+
+       .mat-button-toggle + .mat-button-toggle {
+        border-left-color: solid 1px $grey-light;
+      }
+
+      .mat-button-toggle:hover {
+        border-color: $green-light;
+
+        & + .mat-button-toggle {
+          border-left-color: $green-light;
+        }
+
+        .mat-button-toggle-label-content {
+          color: $green-light;
+        }
+      }
+
+      .mat-button-toggle-checked,
+      .mat-button-toggle-checked:hover {
+        background-color: $green;
+        border-color: $green;
+
+        .mat-button-toggle-label-content {
+          color: $white;
+        }
+      }
     }
   }
 }

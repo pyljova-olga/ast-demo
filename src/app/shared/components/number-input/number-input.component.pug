@@ -1,11 +1,25 @@
-mat-form-field.Form-row(
+mat-form-field.Form-row.NumberInput(
   appearance="outline")
-  mat-label Label
+  mat-label {{label}}
+  button.NumberInput-action--minus.NumberInput-action(
+    *ngIf='showButtons',
+    mat-icon-button,
+    color='primary',
+    (click)='change($event, "minus")',
+    type='button')
+      mat-icon(svgIcon='minus')
   input(
+    [class.TextCenter] = 'align === "center"'
     matInput,
     (input)='onInput($event)',
     (change)='onChange()',
     [formControl]="numberField")
+  button.NumberInput-action--plus.NumberInput-action(
+    *ngIf='showButtons',
+    mat-icon-button,
+    color='primary',
+    (click)='change($event, "plus")',
+    type='button')
+    mat-icon(svgIcon='plus')
 
-button((click)='change("plus")', type='button') +
-button((click)='change("minus")', type='button') -
+

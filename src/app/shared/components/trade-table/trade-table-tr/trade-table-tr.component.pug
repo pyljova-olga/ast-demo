@@ -1,0 +1,26 @@
+.Tr
+    .Tr-col.Tr-country
+        mat-icon.Pointer(svgIcon='lock')
+        img(src='./assets/imgs/flags/co.png')
+    .Tr-col.Tr-plantation ssdf
+    .Tr-col.Tr-type sdf
+    .Tr-col.Tr-subtype sdf
+
+    .Tr-col.Tr-stemQuantity sdf
+    .Tr-col.Tr-stemsInPackaging sdf
+    .Tr-col.Tr-packagingQuantity sdf
+    .Tr-col.Tr-stemPrice sdf
+    .Tr-col.Tr-fb sdf
+    .Tr-col.Tr-sum
+        span 2000 $
+        .SumPanel(
+            ddpanel,
+            showEvent='click',
+            [(isOpened)]='isCartOpened',
+            [showArrow]='false')
+            div.SumPanel-header(ddpanel-header)
+                button(mat-icon-button)
+                    mat-icon(svgIcon='cart')
+            div.SumPanel-panel(ddpanel-body)
+                div(add-to-cart)
+

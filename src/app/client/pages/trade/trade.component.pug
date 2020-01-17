@@ -1,1 +1,68 @@
-p trade works!
+.Workplace-content(*ngIf='tradeOpened')
+    .Workplace-sidebar.Sidebar
+        mat-tab-group.Sidebar-header
+            mat-tab
+                ng-template(mat-tab-label)
+                    span Новые заказы
+                div.Sidebar-body(cart-new)
+            mat-tab
+                ng-template(mat-tab-label)
+                    span(
+                        [matBadge]='5',
+                        matBadgeSize='small',
+                        matBadgeColor='warn') Заказы на утверждение
+                div.Sidebar-body(cart-waiting)
+    .Workplace-main
+        .Workplace-banner
+
+        .Workplace-settings.Settings
+            form.Settings-type(
+                [formGroup]='tradeForm',
+                (ngSubmit)="changeTradeType($event)")
+                mat-button-toggle-group.BtnToggleGroup.BtnToggleGroup--smaller(
+                    formControlName="isSolid")
+                    mat-button-toggle(
+                        [value]="true") Solid
+                    mat-button-toggle(
+                        [value]="false") Mix
+
+            .Settings-filters.Pointer(*ngIf='isSolid.value')
+                mat-icon(svgIcon='filter')
+                span Фильтровать предложения
+            .Settings-update
+                span Автообновление через 5
+                button.mat-icon-button--square30(
+                    mat-icon-button,
+                    color='primary'
+                )
+                    mat-icon(svgIcon='reload')
+
+        .Workplace-description Выберите требуемую плантацию, для которой хотите добавить миксованный товар, с помощью фильтра ниже. Если вы добавите себе в корзину лот какой-либо плантации, то список лотов будет отфильтрован по этой плантации автоматически. Для выбора лотов другой плантации вы можете сбросить фильтр.
+
+        .Workplace-filters(*ngIf='!isSolid.value')
+            div(mix-filters)
+
+        .Table(*ngIf='isSolid.value')
+            .Table-header(trade-table-thead)
+            .Table-row(trade-table-tr)
+            .Table-row(trade-table-tr)
+            .Table-row(trade-table-tr)
+            .Table-row(trade-table-tr)
+            .Table-row(trade-table-tr)
+            .Table-row(trade-table-tr)
+            .Table-row(trade-table-tr)
+            .Table-row(trade-table-tr)
+
+        .Table(*ngIf='!isSolid.value')
+            .Table-header(trade-mixed-table-thead)
+            .Table-row(trade-mixed-table-tr)
+            .Table-row(trade-mixed-table-tr)
+            .Table-row(trade-mixed-table-tr)
+            .Table-row(trade-mixed-table-tr)
+            .Table-row(trade-mixed-table-tr)
+            .Table-row(trade-mixed-table-tr)
+            .Table-row(trade-mixed-table-tr)
+.Workplace-content(
+    *ngIf='!tradeOpened',
+    trade-closed)
+// div(right-modal) modal example

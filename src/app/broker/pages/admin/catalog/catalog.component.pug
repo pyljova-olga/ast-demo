@@ -1,1 +1,28 @@
-p catalog works!
+.Catalog
+    .Catalog-menu
+        mat-button-toggle-group.BtnToggleGroup.BtnToggleGroup--smaller
+            mat-button-toggle(
+                routerLink='/broker/admin/catalog/list',
+                routerLinkActive="mat-button-toggle-checked"
+            ) Каталог
+            mat-button-toggle(
+                routerLink='/broker/admin/catalog/requests',
+                routerLinkActive="mat-button-toggle-checked"
+            ) Заявки на добавление цветов
+
+    .Catalog-add
+        button(
+            mat-button,
+            color='primary',
+            (click)='isModalLengthsOpened = true'
+        ) Управление ростовками
+router-outlet
+div(
+    *ngIf='isModalLengthsOpened'
+    right-modal,
+    (close)='isModalLengthsOpened = false',
+    titleText="Управление ростовками")
+    div(
+        modal-lengths,
+        [lengths]='[50,60,85,95,105]')
+

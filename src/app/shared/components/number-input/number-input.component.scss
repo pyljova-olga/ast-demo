@@ -1,0 +1,22 @@
+@import '../../../../styles/variables';
+
+.NumberInput {
+  .TextCenter {
+    text-align: center;
+  }
+
+  &-action {
+    position: absolute;
+    top: -4px;
+
+    &--minus {
+      left: -12px;
+    }
+
+    &--plus {
+      right: -12px;
+    }
+  }
+
+
+}

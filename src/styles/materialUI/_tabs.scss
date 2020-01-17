@@ -12,4 +12,19 @@
   .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
     display: none;
   }
+
+  .mat-tab-label {
+    min-width: 50px;
+    opacity: 1;
+  }
+}
+
+.Sidebar {
+  .mat-tab-header {
+    border-bottom: 1px solid $grey-dark;
+  }
+
+  .mat-tab-labels{
+    justify-content: center;
+  }
 }

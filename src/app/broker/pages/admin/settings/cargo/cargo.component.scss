@@ -1,0 +1,56 @@
+@import '../../../../../../styles/variables';
+.Cargo {
+  position: relative;
+  &-add {
+    position: absolute;
+    top: -54px;
+    right: 0;
+  }
+}
+.Item {
+  margin-bottom: 10px;
+  padding: 12px 20px 21px;
+  box-shadow: $panel-shadow;
+
+  &-places {
+    display: flex;
+    align-items: center;
+    margin-bottom: 11px;
+  }
+
+  &-place {
+    display: flex;
+    align-items: center;
+    color: $grey-dark;
+    font-weight: 700;
+
+    .mat-icon {
+      margin-right: 7px;
+    }
+
+    span {
+      margin-left: 10px;
+      color: $black;
+    }
+
+    & + & {
+      margin-left: 30px;
+    }
+  }
+
+  &-description {
+    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 18px;
+
+    span {
+      margin-left: 20px;
+    }
+  }
+
+  &-actions {
+    button + button {
+      margin-left: 5px;
+    }
+  }
+}

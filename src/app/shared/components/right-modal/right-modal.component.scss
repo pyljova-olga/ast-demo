@@ -1,0 +1,38 @@
+@import '../../../../styles/variables';
+
+.RightModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  z-index: 1000;
+
+  &-background {
+    flex: 0 0 40%;
+    background: $totalBlack;
+    opacity: 0.75;
+  }
+  &-main {
+    flex: 0 0 60%;
+    background: $white;
+  }
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 15px;
+  border-bottom: 1px solid $grey-default;
+  &-close {
+    flex: 0 0 auto;
+    margin-right: 13px;
+  }
+
+  &-title {
+    font-size: 14px;
+    font-weight: 700;
+  }
+}

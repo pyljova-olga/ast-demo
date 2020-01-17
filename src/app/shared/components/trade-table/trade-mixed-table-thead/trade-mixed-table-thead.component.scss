@@ -1,0 +1,74 @@
+@import '../../../../../styles/variables';
+
+.Thead {
+  display: flex;
+  border-bottom: 1px solid $grey-dark;
+  font-size: 13px;
+
+  &-country {
+    flex: 0 0 6%;
+  }
+
+  &-plantation {
+    flex: 0 0 11.18%;
+  }
+
+  &-type {
+    flex: 0 0 10.48%;
+  }
+
+  &-subtype {
+    flex: 0 0 12.7%;
+  }
+
+  &-stemQuantity {
+    flex: 0 0 10.95%;
+  }
+
+  &-stemsInPackaging {
+    flex: 0 0 9.79%;
+  }
+
+  &-packagingQuantity {
+    flex: 0 0 10.6%;
+  }
+
+  &-stemPrice {
+    flex: 0 0 8.04%;
+  }
+
+  &-length {
+    flex: 0 0 7.57%;
+  }
+
+  &-sum {
+    flex: 0 0 11.53%;
+  }
+
+  &-col {
+    padding: 9px 4px;
+    border-left: 1px solid $grey-default;
+    line-height: 1;
+
+    &:first-child {
+      border-left: 0;
+    }
+
+    &--sortable {
+      font-family: 'IBM Plex Sans', sans-serif;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &--sorted {
+      background: $grey-default;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

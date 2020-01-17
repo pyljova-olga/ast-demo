@@ -1,0 +1,78 @@
+@import '../../../../styles/variables';
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  border-bottom: 1px solid $divider-light;
+  padding: 0 26px;
+  font-size: 16px;
+
+  &-col {
+    display: flex;
+    align-items: center;
+
+    &--left {
+      justify-content: flex-start;
+    }
+
+    &--right {
+      justify-content: flex-end;
+    }
+  }
+
+  &-logo {
+    margin-right: 33px;
+  }
+
+  &-notifications,
+  &-user,
+  &-deposit {
+    margin-left: 24px;
+  }
+
+  &-notifications {
+    .mat-badge-small.mat-badge-overlap.mat-badge-after .mat-badge-content {
+      top: -4px;
+      right: -6px;
+    }
+  }
+}
+.Tabs {
+  border-bottom: 0;
+
+  .mat-tab-label,
+  .mat-tab-link {
+    font-size: 16px;
+  }
+  .mat-tab-link {
+    height: 64px;
+  }
+}
+
+.UserMenu {
+  &-header {
+    padding: 10px 0;
+  }
+  &-items {
+    width: 327px;
+  }
+  &-item {
+    margin: 0 -5px;
+    font-size: 14px;
+
+    a {
+      padding: 7px 20px;
+      display: block;
+    }
+
+    &:last-child {
+      border-top: 1px solid $divider-light;
+
+      a {
+        padding: 7px 20px 2px;
+      }
+    }
+  }
+}

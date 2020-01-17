@@ -3,6 +3,8 @@
     [class.Panel-header--withIcon]='showArrow',
     (click)='toggle()')
     ng-content(select='[ddpanel-header]')
-    mat-icon.Panel-icon([svgIcon]='isOpened ? "keyboard_arrow_up" : "keyboard_arrow_down"')
+    mat-icon.Panel-icon(
+      *ngIf='showArrow',
+      [svgIcon]='isOpened ? "keyboard_arrow_up" : "keyboard_arrow_down"')
   .Panel-panel(*ngIf='isOpened')
     ng-content(select='[ddpanel-body]')

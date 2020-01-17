@@ -1,0 +1,35 @@
+.Thead
+    .Thead-col.Thead-country Страна
+    .Thead-col.Thead-plantation Плантация
+    .Thead-col.Thead-type Тип товара
+    .Thead-col.Thead-subtype Сорт товара
+    .Thead-col.Thead-stemQuantity.Thead-col--sortable(
+        [class.Thead-col--sorted]='sortSettings.id === "stemQuantity" && sortSettings.type',
+        (click)='changeSort("stemQuantity")')
+        | Количество стеблей {{sortSettings.id === 'stemQuantity' && sortSettings.type ? (sortSettings.type === 1 ? '↓' : '↑' ): ''}}
+
+    .Thead-col.Thead-stemsInPackaging.Thead-col--sortable(
+        [class.Thead-col--sorted]='sortSettings.id === "stemsInPack" && sortSettings.type',
+        (click)='changeSort("stemsInPack")')
+        | Стеблей в упаковке {{sortSettings.id === 'stemsInPack' && sortSettings.type ? (sortSettings.type === 1 ? '↓' : '↑' ): ''}}
+
+    .Thead-col.Thead-packagingQuantity.Thead-col--sortable(
+        [class.Thead-col--sorted]='sortSettings.id === "packQuantity" && sortSettings.type',
+        (click)='changeSort("packQuantity")')
+        | Количество упаковок {{sortSettings.id === 'packQuantity' && sortSettings.type ? (sortSettings.type === 1 ? '↓' : '↑' ): ''}}
+
+    .Thead-col.Thead-stemPrice.Thead-col--sortable(
+        [class.Thead-col--sorted]='sortSettings.id === "price" && sortSettings.type',
+        (click)='changeSort("price")')
+        | Цена за стебель {{sortSettings.id === 'price' && sortSettings.type ? (sortSettings.type === 1 ? '↓' : '↑' ): ''}}
+
+    .Thead-col.Thead-stemPrice.Thead-col--sortable(
+        [class.Thead-col--sorted]='sortSettings.id === "stemLength" && sortSettings.type',
+        (click)='changeSort("stemLength")')
+        | Длина стебля {{sortSettings.id === 'stemLength' && sortSettings.type ? (sortSettings.type === 1 ? '↓' : '↑' ): ''}}
+
+    .Thead-col.Thead-sum.Thead-col--sortable(
+        [class.Thead-col--sorted]='sortSettings.id === "sum" && sortSettings.type',
+        (click)='changeSort("sum")')
+        | Сумма {{sortSettings.id === 'sum' && sortSettings.type ? (sortSettings.type === 1 ? '↓' : '↑' ): ''}}
+

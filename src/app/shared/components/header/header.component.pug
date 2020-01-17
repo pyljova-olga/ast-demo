@@ -1,1 +1,51 @@
-p app header works!
+.Header
+    .Header-col.Header-col--left
+        .Header-logo
+            img(
+                src='./assets/imgs/logo.svg',
+                alt='B2B Flowers')
+        .Header-menu
+            nav.Tabs(mat-tab-nav-bar)
+                a(
+                    mat-tab-link,
+                    *ngFor='let link of menuLinks',
+                    [routerLink]='link.link',
+                    routerLinkActive,
+                    #rla='routerLinkActive',
+                    [active] = "rla.isActive")
+                        span(*ngIf='!link.notification') {{link.text}}
+                        span(
+                            *ngIf='link.notification',
+                            [matBadge]='link.notification',
+                            matBadgeSize='small',
+                            matBadgeColor='warn') {{link.text}}
+    .Header-col.Header-col--right
+        .Header-deposit(*ngIf='deposit')
+            button(
+                class='mat-stroked-icon-button',
+                color='primary',
+                mat-stroked-button)
+                mat-icon(svgIcon='wallet')
+                span {{deposit | numberFormat }} $
+        .Header-notifications(*ngIf='notifications')
+            button(mat-icon-button)
+                mat-icon(
+                    *ngIf='!notifications',
+                    [svgIcon]='"keyboard_arrow_up"')
+                mat-icon(
+                    *ngIf='notifications',
+                    [svgIcon]='"notification"',
+                    [matBadge]='notifications',
+                    matBadgeSize='small',
+                    matBadgeColor='warn')
+        .Header-user.UserMenu(
+            ddpanel,
+            showEvent='click',
+            [(isOpened)]='isUserPanelOpened',
+            [showArrow]='true')
+            .UserMenu-header(ddpanel-header) Константин Константинович
+            .UserMenu-items(ddpanel-body)
+                .UserMenu-item(*ngFor='let link of userLinks')
+                    a.Langs-lang.Green([routerLink]="link.link" ) {{link.text}}
+                .UserMenu-item
+                    a.Green((click)='logout($event)') Выход

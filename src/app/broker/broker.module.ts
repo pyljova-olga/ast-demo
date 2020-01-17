@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { BrokerComponent } from './broker.component';
 import { TradeComponent } from './pages/trade/trade.component';
@@ -31,6 +32,11 @@ import { RequestComponent } from './pages/admin/users/requests/request/request.c
 import { RequestsComponent } from './pages/admin/users/requests/requests.component';
 import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
+import { ActivitiesComponent } from './pages/admin/activities/activities.component';
+import { UserTableComponent } from './components/user-table/user-table.component';
+import { SettingsTypeItemComponent } from './components/settings-type-item/settings-type-item.component';
+import { SettingsSubTypeItemComponent } from './components/settings-sub-type-item/settings-sub-type-item.component';
+import { ModalLengthsComponent } from './components/modal-lengths/modal-lengths.component';
 
 const routes: Routes = [
   {
@@ -92,6 +98,9 @@ const routes: Routes = [
                 pathMatch: 'full'
               }
             ]
+          }, {
+            path: 'activities',
+            component: ActivitiesComponent
           }, {
             path: 'content',
             component: ContentComponent,
@@ -174,12 +183,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [UsersBrokerComponent, BrokerComponent, TradeComponent, HistoryComponent, OrdersComponent, AuctionComponent, PaidComponent, ShippedComponent, ClaimsComponent, AdminComponent, SettingsComponent, ContentComponent, CatalogComponent, UsersComponent, BasicComponent, CargoComponent, BannerComponent, NewsComponent, SalesComponent, MessagesComponent, FaqComponent, ListComponent, CatalogRequestsComponent, ClientsComponent, PlantationsComponent, RequestComponent, RequestsComponent],
+  declarations: [UsersBrokerComponent, BrokerComponent, TradeComponent, HistoryComponent, OrdersComponent, AuctionComponent, PaidComponent, ShippedComponent, ClaimsComponent, AdminComponent, SettingsComponent, ContentComponent, CatalogComponent, UsersComponent, BasicComponent, CargoComponent, BannerComponent, NewsComponent, SalesComponent, MessagesComponent, FaqComponent, ListComponent, CatalogRequestsComponent, ClientsComponent, PlantationsComponent, RequestComponent, RequestsComponent, ActivitiesComponent, UserTableComponent, SettingsTypeItemComponent, SettingsSubTypeItemComponent, ModalLengthsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
   ]
 })
 export class BrokerModule { }

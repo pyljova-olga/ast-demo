@@ -1,0 +1,40 @@
+@import '../../../../../../styles/variables';
+
+.Filters {
+  padding: 10px 10px 18px 10px;
+  margin: 0 0 0 -10px;
+  background: $grey-default;
+  &-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &-left,
+  &-right {
+    display: flex;
+    align-items: flex-start;
+
+    & > button {
+      margin-top:15px;
+    }
+  }
+
+  &-item {
+    width: 205px;
+    margin-bottom: -33px;
+    margin-right: 10px;
+  }
+
+  &-right {
+    button {
+      margin-left: 10px;
+    }
+  }
+}
+
+.List {
+  &-add {
+    margin-top: 20px;
+  }
+}

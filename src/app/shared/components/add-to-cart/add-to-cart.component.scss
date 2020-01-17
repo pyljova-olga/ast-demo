@@ -1,0 +1,61 @@
+@import '../../../../styles/variables';
+
+.AddToCart {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -5px;
+    padding: 2px 20px;
+    border-bottom: 1px solid $grey-light;
+  }
+
+  &-body {
+    padding: 10px 15px;
+  }
+
+  &-title {
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  &-close {
+    margin-right: -15px;
+  }
+
+  &-max {
+    margin-bottom: 22px;
+    color: $grey-dark;
+    font-size: 14px;
+  }
+
+  &-field {
+    position: relative;
+    display: flex;
+  }
+
+  &-input {
+    flex: 0 0 230px;
+  }
+
+  &-tooltip {
+    position: absolute;
+    left: 240px;
+    top: 15px;
+    padding: 1px 5px;
+    border-radius: 2px;
+    background: $grey-light;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin: -5px 0 0 -5px;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 5px solid $grey-light;
+    }
+  }
+
+}

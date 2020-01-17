@@ -1,0 +1,61 @@
+@import '../../../../styles/variables';
+
+.Table {
+  margin-top: 16px;
+
+  table {
+    width: 100%;
+  }
+
+  td,
+  th {
+    height: 42px;
+    padding: 0 4px;
+    border: 1px solid $grey-light;
+    border-right: 0;
+    font-size: 14px;
+    vertical-align: middle;
+    text-align: left;
+
+    &:first-child {
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  th {
+    border-bottom: 1px solid $grey-dark;
+    border-top: 0;
+    font-weight: normal;
+  }
+
+  & &-td {
+    &--noborder {
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+
+  .TextRight {
+    text-align: right;
+  }
+
+  .mat-icon-button {
+    color: $grey-dark;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+.Deposit {
+  &-panel {
+    width: 275px;
+    padding: 14px 31px;
+    text-align: center;
+  }
+}

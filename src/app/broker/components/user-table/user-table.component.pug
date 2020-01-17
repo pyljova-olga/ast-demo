@@ -1,0 +1,45 @@
+.Table
+    table
+        tr
+            th(*ngIf='type === "plantations"') Плантация
+            th(*ngIf='type === "clients"') Компания
+            th Фамилия
+            th Имя
+            th Роль
+            th Email
+            th Skype
+            th.Table-td--noborder(*ngIf='type === "plantations"')
+            th.Table-td--noborder
+            th.Table-td--noborder
+        tr(*ngFor='let user of users')
+            td(*ngIf='type === "plantations"') Название плантации
+            td(*ngIf='type === "clients"') Назваие компании
+            td
+                a.Green((click)='openUserInfo($event)') Фамилия юзера
+            td Имя юзера
+            td Роль юзера
+            td email@dff.ru
+            td user_skype
+            td.Table-td--noborder.TextRight(*ngIf='type === "plantations"')
+                .Deposit(
+                    ddpanel,
+                    showEvent='click',
+                    [(isOpened)]='depositOpened && depositOpenedId === user.id',
+                    [showArrow]='false')
+                    div.Deposit-header(ddpanel-header, (click)='depositOpenedId = user.id')
+                        a.Green 2000
+                    div.Deposit-panel(ddpanel-body)
+                        a.Green((click)='payMoney($event)') Засчитать перевод оплаты
+
+            td.Table-td--noborder.TextRight
+                button(
+                    mat-icon-button,
+                    type='button'
+                )
+                    mat-icon(svgIcon="trash-can")
+            td.Table-td--noborder.TextRight
+                button(
+                    mat-icon-button,
+                    type='button'
+                )
+                    mat-icon(svgIcon="trash-can")

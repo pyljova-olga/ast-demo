@@ -1,1 +1,123 @@
-p basic works!
+.Basic
+    form.Form(
+        [formGroup]="settingsForm",
+        (submit)='submit()'
+        )
+        h2 Период торгового дня
+        .Form-row
+            mat-checkbox.Block(
+                formControlName="isFullDay",
+                [value]='true',
+                color="primary") Торговля ведется круглосуточно
+        ng-container(
+            *ngIf='!isFullDay.value')
+            ng-container(
+                formArrayName="periods",
+                *ngFor="let period of settingsForm.get('periods')['controls']; let i = index;")
+                .FormGroup(
+                    [formGroupName]="i")
+                    .FormGroup-field
+                        mat-form-field.Form-row(
+                            appearance="outline")
+
+                            mat-label Начало торгового дня
+                            input(
+                                (change)='onChange(i, "from")',
+                                matInput,
+                                formControlName="from")
+                            mat-error(
+                                *ngIf="getPeriod(i, 'from').invalid")
+                                ng-container(
+                                    *ngIf="getPeriod(i, 'from').errors.required") Обязательное поле
+
+                    .FormGroup-divider -
+                    .FormGroup-field
+                        mat-form-field.Form-row(
+                            appearance="outline")
+
+                            mat-label Конец торгового дня
+                            input(
+                                (change)='onChange(i, "to")',
+                                matInput,
+                                formControlName="to")
+                            mat-error(
+                                *ngIf="getPeriod(i, 'to').invalid")
+                                ng-container(
+                                    *ngIf="getPeriod(i, 'to').errors.required") Обязательное поле
+
+
+                    .FormGroup-action
+                        button(
+                            mat-icon-button,
+                            matSuffix,
+                            color='primary',
+                            (click)="removePeriod(i)")
+                            mat-icon.Panel-icon(svgIcon='close')
+
+        .Form-row
+            button(
+                mat-button,
+                color='primary',
+                type='button',
+                *ngIf='!isFullDay.value',
+                (click)='addPeriod()') Добавить период торгового дня
+
+        .Basic-delimiter
+        .Basic-label Рабочий график:
+        mat-button-toggle-group.BtnToggleGroup.BtnToggleGroup--smaller(
+            [multiple]='true',
+            formControlName="days" )
+            mat-button-toggle([value]='1') Понедельник
+            mat-button-toggle([value]='2') Вторник
+            mat-button-toggle([value]='3') Среда
+            mat-button-toggle([value]='4') Четверг
+            mat-button-toggle([value]='5') Пятница
+            mat-button-toggle([value]='6') Суббота
+            mat-button-toggle([value]='7') Воскресенье
+
+        .FormGroup
+            .FormGroup-field
+                mat-form-field.Form-row(
+                    appearance="outline")
+
+                    mat-label Таймер на утверждение заказа (минут)
+                    input(
+                        matInput,
+                        formControlName="timerApprove")
+                    mat-error(
+                        *ngIf="timerApprove.invalid")
+                        ng-container(
+                            *ngIf="timerApprove.errors.required") Обязательное поле
+
+            .FormGroup-field
+                mat-form-field.Form-row(
+                    appearance="outline")
+
+                    mat-label Таймер на оплату заказа (минут)
+                    input(
+                        matInput,
+                        formControlName="timerPayment")
+                    mat-error(
+                        *ngIf="timerPayment.invalid")
+                        ng-container(
+                            *ngIf="timerPayment.errors.required") Обязательное поле
+
+        .FormGroup-field
+            mat-form-field.Form-row(
+                appearance="outline")
+
+                mat-label Таймер обновления экрана (секунд)
+                input(
+                    matInput,
+                    formControlName="timerUpdate")
+                mat-error(
+                    *ngIf="timerUpdate.invalid")
+                    ng-container(
+                        *ngIf="timerUpdate.errors.required") Обязательное поле
+
+
+        button(
+            mat-flat-button,
+            color='primary',
+            type='submit'
+        ) Изменить

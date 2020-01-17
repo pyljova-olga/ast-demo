@@ -1,0 +1,101 @@
+@import '../../../../../styles/variables';
+
+.Tr {
+  display: flex;
+  align-items: center;
+ font-size: 14px;
+
+  &-country {
+    flex: 0 0 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      display: block;
+      margin-left: 7px;
+      width: 24px;
+      height: auto;
+    }
+
+    .mat-icon {
+      display: block;
+      width: 9px;
+      height: 10px;
+      line-height: 0;
+      color: $grey-dark;
+      transition: all linear 0.2s;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+
+  &-plantation {
+    flex: 0 0 11.18%;
+  }
+
+  &-type {
+    flex: 0 0 10.48%;
+  }
+
+  &-subtype {
+    flex: 0 0 12.7%;
+  }
+
+  &-stemQuantity {
+    flex: 0 0 10.95%;
+  }
+
+  &-stemsInPackaging {
+    flex: 0 0 9.79%;
+  }
+
+  &-packagingQuantity {
+    flex: 0 0 10.6%;
+  }
+
+  &-stemPrice {
+    flex: 0 0 8.04%;
+  }
+
+  &-length {
+    flex: 0 0 7.57%;
+  }
+
+  &-sum {
+    flex: 0 0 11.53%;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      margin: -9px -6px -9px 3px;
+    }
+  }
+
+  &-col {
+    padding: 9px 4px;
+    border-left: 1px solid $grey-default;
+    line-height: 24px;
+
+    &:first-child {
+      border-left: 0;
+    }
+  }
+}
+.SumPanel {
+  &-panel {
+    width: 347px;
+  }
+
+  &-header {
+    button {
+      color: $grey-dark;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+}

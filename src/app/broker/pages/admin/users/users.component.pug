@@ -1,1 +1,25 @@
-p users works!
+.Users
+    .Users-menu
+        mat-button-toggle-group.BtnToggleGroup.BtnToggleGroup--smaller
+            mat-button-toggle(
+                routerLink='/broker/admin/users/clients',
+                routerLinkActive="mat-button-toggle-checked"
+            ) Клиенты
+            mat-button-toggle(
+                routerLink='/broker/admin/users/plantations',
+                routerLinkActive="mat-button-toggle-checked"
+            ) Плантации
+            mat-button-toggle(
+                routerLink='/broker/admin/users/broker',
+                routerLinkActive="mat-button-toggle-checked"
+            ) Брокер
+            mat-button-toggle(
+                routerLink='/broker/admin/users/requests',
+                routerLinkActive="mat-button-toggle-checked"
+            ) Заявки с формы регистрации
+    .Users-add
+        button(
+            mat-flat-button,
+            color='primary'
+        ) + Добавить пользователя
+router-outlet

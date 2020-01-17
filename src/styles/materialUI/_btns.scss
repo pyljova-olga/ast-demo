@@ -1,6 +1,5 @@
 .B2BF {
   .mat-button-base {
-    overflow: hidden;
     font-size: 16px;
     font-weight: 400;
   }
@@ -8,6 +7,14 @@
    .mat-button-base {
      transition: all linear 0.2s;
    }
+
+  .mat-icon-button--square30 {
+    height: 30px;
+    width: 30px;
+    border: 1px solid $grey-default;
+    border-radius: 0;
+    overflow: hidden;
+  }
 
   .mat-stroked-icon-button { // FOR stroked button with icon
     padding: 0 7px;
@@ -85,6 +92,18 @@
         background: $green-light;
         color: $white;
       }
+    }
+  }
+
+  .mat-icon-button {
+    .mat-icon {
+      margin-top: -3px;
+    }
+  }
+
+  .mat-icon-button--square30 {
+    .mat-icon {
+      margin-top: -13px;
     }
   }
 }

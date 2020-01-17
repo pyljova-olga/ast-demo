@@ -1,1 +1,95 @@
-p list works!
+.List
+    .Filters([formGroup]='filtersForm')
+        .Filters-row
+            .Filters-left
+                mat-form-field.Form-field--white.Form-row.Filters-item(
+                    appearance="outline")
+
+                    input(placeholder='Тип товара',
+                        matInput,
+                        formControlName="type",
+                        [matAutocomplete]='autoType')
+                    mat-icon.TextGreen(
+                        matSuffix,
+                        [svgIcon]='autoType.isOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"')
+
+                    mat-autocomplete(#autoType='matAutocomplete')
+                        mat-option(
+                            *ngFor='let item of filteredTypes | async',
+                            [value] = 'item')
+                            | {{item}}
+
+                mat-form-field.Form-field--white.Form-row.Filters-item(
+                    appearance="outline")
+
+                    input(placeholder='Сорт товара',
+                        matInput,
+                        formControlName="subtype",
+                        [matAutocomplete]='autoSubtype')
+                    mat-icon.TextGreen(
+                        matSuffix,
+                        [svgIcon]='autoSubtype.isOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"')
+
+                    mat-autocomplete(#autoSubtype='matAutocomplete')
+                        mat-option(
+                            *ngFor='let item of filteredSubtypes | async',
+                            [value] = 'item')
+                            | {{item}}
+
+                mat-form-field.Form-field--white.Form-row.Filters-item(
+                    appearance="outline")
+
+                    input(placeholder='Выберите ростовку',
+                        matInput,
+                        formControlName="length",
+                        [matAutocomplete]='autoLength')
+                    mat-icon.TextGreen(
+                        matSuffix,
+                        [svgIcon]='autoLength.isOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"')
+
+                    mat-autocomplete(#autoLength='matAutocomplete')
+                        mat-option(
+                            *ngFor='let item of filteredLengths | async',
+                            [value] = 'item')
+                            | {{item}}
+
+            .Filters-right
+                button(
+                    type='button',
+                    mat-flat-button,
+                    color='primary'
+                ) Показать
+                button(
+                    type='button',
+                    mat-button,
+                    color='primary',
+                    (click)='cancel()'
+                ) Сбросить
+
+    .List-list
+        ng-container(
+            *ngFor='let type of t')
+            div(
+                settings-type-item,
+                (toggle)='openedTId === type.id ? openedTId=-1 : openedTId = type.id',
+                [isOpened]='openedTId === type.id',
+                (delete)='deleteType(type.id)',
+                (change)='changeType(type.id)'
+            )
+            ng-container(
+                *ngIf='type.id === openedTId')
+
+                div(
+                    settings-sub-type-item,
+                    *ngFor='let subtype of type.st',
+                    (toggle)='openedSTId === subtype.id ? openedSTId = -1 : openedSTId = subtype.id',
+                    (delete)='deleteSubtype(type.id, subtype.id)',
+                    (change)='changeSubtype(type.id, subtype.id)',
+                    (deactivate)='deactivateSubtype(type.id, subtype.id)',
+                    [isOpened]='openedSTId === subtype.id')
+    .List-add
+        button(
+            mat-flat-button,
+            type='button',
+            color='primary'
+        ) Добавить новый тип

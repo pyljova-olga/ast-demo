@@ -1,0 +1,86 @@
+@import '../../../../styles/variables';
+
+.CartPlantation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 10px 5px;
+
+  &-left,
+  &-right {
+    display: flex;
+    align-items: center;
+  }
+  &-title {
+    line-height: 18px;
+  }
+  &-desc {
+    font-size: 12px;
+  }
+
+  &-action {
+    margin: 0 5px;
+  }
+
+  &-percent {
+    position: relative;
+    width: 33px;
+    height: 33px;
+    margin-right:  6px;
+    border: 1px solid $grey-light;
+    background: $white;
+
+    span {
+      display: block;
+      height: 20px;
+      margin: 12px -1px -1px -1px;
+      background: $green;
+      color: $white;
+      font-size: 12px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 3px;
+      height: 27px;
+      top: 3px;
+      left: 32px;
+      background: $grey-light;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 3px;
+      height: 20px;
+      top: 6px;
+      left: 35px;
+      background: $grey-dark;
+    }
+  }
+
+  &-tooltip {
+    position: relative;
+    margin-left: 7px;
+    padding: 1px 5px;
+    border-radius: 2px;
+    background: $grey-light;
+    line-height: 19px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin: -4px 0 0 -4px;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-right: 4px solid $grey-light;
+    }
+  }
+}

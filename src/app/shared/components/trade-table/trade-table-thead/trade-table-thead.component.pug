@@ -1,0 +1,50 @@
+.Thead
+    .Thead-col.Thead-country Страна
+    .Thead-col.Thead-plantation Плантация
+    .Thead-col.Thead-type Тип товара
+    .Thead-col.Thead-subtype Сорт товара
+    .Thead-groups
+        .Thead-group.BtnToggleGroupSlider
+            mat-button-toggle-group
+                mat-button-toggle([value]="30") 30
+                mat-button-toggle([value]="35") 35
+                mat-button-toggle([value]="40") 40
+                mat-button-toggle([value]="50") 50
+                mat-button-toggle([value]="60") 60
+                mat-button-toggle([value]="70") 70
+                mat-button-toggle([value]="80") 80
+                mat-button-toggle([value]="90") 90
+                mat-button-toggle([value]="100") 100
+                mat-button-toggle([value]="110") 110
+                mat-button-toggle([value]="120") 120
+                mat-button-toggle([value]="130") 130
+                mat-button-toggle([value]="140") 140
+                mat-button-toggle([value]="150") 150
+                mat-button-toggle([value]="160") 160
+                mat-button-toggle([value]="170") 170
+                mat-button-toggle([value]="180") 180
+        .Thead-group
+            .Thead-col.Thead-stemQuantity.Thead-col--sortable(
+                [class.Thead-col--sorted]='sortSettings.id === "stemQuantity" && sortSettings.type',
+                (click)='changeSort("stemQuantity")')
+                | Количество стеблей {{sortSettings.id === 'stemQuantity' && sortSettings.type ? (sortSettings.type === 1 ? '↓' : '↑' ): ''}}
+            .Thead-col.Thead-stemsInPackaging.Thead-col--sortable(
+                [class.Thead-col--sorted]='sortSettings.id === "stemsInPack" && sortSettings.type',
+                (click)='changeSort("stemsInPack")')
+                | Стеблей в упаковке {{sortSettings.id === 'stemsInPack' && sortSettings.type ? (sortSettings.type === 1 ? '↓' : '↑' ): ''}}
+            .Thead-col.Thead-packagingQuantity.Thead-col--sortable(
+                [class.Thead-col--sorted]='sortSettings.id === "packQuantity" && sortSettings.type',
+                (click)='changeSort("packQuantity")')
+                | Количество упаковок {{sortSettings.id === 'packQuantity' && sortSettings.type ? (sortSettings.type === 1 ? '↓' : '↑' ): ''}}
+            .Thead-col.Thead-stemPrice.Thead-col--sortable(
+                [class.Thead-col--sorted]='sortSettings.id === "price" && sortSettings.type',
+                (click)='changeSort("price")')
+                | Цена за стебель {{sortSettings.id === 'price' && sortSettings.type ? (sortSettings.type === 1 ? '↓' : '↑' ): ''}}
+            .Thead-col.Thead-fb.Thead-col--sortable(
+                [class.Thead-col--sorted]='sortSettings.id === "fb" && sortSettings.type',
+                (click)='changeSort("fb")')
+                | FB {{sortSettings.id === 'fb' && sortSettings.type ? (sortSettings.type === 1 ? '↓' : '↑' ): ''}}
+            .Thead-col.Thead-sum.Thead-col--sortable(
+                [class.Thead-col--sorted]='sortSettings.id === "sum" && sortSettings.type',
+                (click)='changeSort("sum")')
+                | Сумма {{sortSettings.id === 'sum' && sortSettings.type ? (sortSettings.type === 1 ? '↓' : '↑' ): ''}}

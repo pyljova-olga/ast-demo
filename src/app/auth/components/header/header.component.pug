@@ -2,19 +2,21 @@
   .Header-logo
     img(
       src='./assets/imgs/logo.svg',
-      alt='B2B Flovers')
+      alt='B2B Flowers')
   .Header-title(*ngIf='url === "/auth/restore"') {{'auth.header.restorePassword' | translate}}
   .Header-menu(*ngIf='url !== "/auth/restore"')
     nav.Tabs(mat-tab-nav-bar)
       a(
         mat-tab-link,
         routerLink="/auth/login",
-        routerLinkActive #rla="routerLinkActive",
+        routerLinkActive,
+        #rla="routerLinkActive",
         [active] = "rla.isActive") {{'auth.header.login' | translate}}
       a(
         mat-tab-link,
         routerLink="/auth/registration",
-        routerLinkActive #rrla="routerLinkActive",
+        routerLinkActive,
+        #rrla="routerLinkActive",
         [active] = "rrla.isActive") {{'auth.header.register' | translate}}
   .Header-langs.Langs
     .Langs-panel(

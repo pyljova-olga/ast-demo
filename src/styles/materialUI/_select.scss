@@ -1,0 +1,34 @@
+.B2BF {
+  .mat-select-placeholder {
+    color: $grey-dark;
+  }
+
+  .mat-select-arrow {
+    width: 24px;
+    height: 24px;
+    margin: 0 0px -11px 4px;
+    border: 0;
+    background-color: $green;
+    -webkit-mask-image: url('assets/imgs/keyboard_arrow_down.svg');
+    mask-image: url('assets/imgs/keyboard_arrow_down.svg');
+  }
+
+  .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    -webkit-mask-image: url('assets/imgs/keyboard_arrow_up.svg');
+    mask-image: url('assets/imgs/keyboard_arrow_up.svg');
+  }
+}
+
+.mat-select-panel {
+  margin-top: 46px;
+  margin-bottom: 49px;
+  border-radius: 0!important;
+
+  &:not([class*=mat-elevation-z]) {
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 3px 4px 0 rgba(0, 0, 0, 0.14);
+  }
+
+  &.mat-primary .mat-option {
+    color: $green;
+  }
+}

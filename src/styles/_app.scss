@@ -14,6 +14,11 @@
 @import 'materialUI/formFields';
 @import 'materialUI/radio';
 @import 'materialUI/checkbox';
+@import 'materialUI/autocomplete';
+@import 'materialUI/chip';
+@import 'materialUI/select';
+@import 'materialUI/badge';
+@import 'materialUI/slider';
 
 * {
   -webkit-box-sizing: border-box;
@@ -29,8 +34,41 @@ body {
   line-height: 1.5;
 }
 
-.Wrapper {
-  width: 1280px;
-  overflow: hidden;
-  margin: 0 auto;
+.B2BF,
+.B2BF > div:last-child{
+  min-height: 100%;
+}
+
+.B2BF,
+.B2BF > div:last-child,
+.Workplace,
+.Workplace > div:last-child {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.Workplace {
+  min-width: 1280px;
+  width: 100%;
+
+  &-header {
+    flex: 0 0 64px;
+  }
+
+  &-content {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 100%;
+  }
+
+  &-sidebar {
+    flex: 0 0 30%;
+    background: $grey-light;
+  }
+
+  &-main {
+    flex: 0 0 70%;
+    padding: 12px 27px 12px 11px;
+  }
 }

@@ -1,0 +1,25 @@
+.Tr
+    .Tr-col.Tr-country
+        mat-icon.Pointer(svgIcon='lock')
+        img(src='./assets/imgs/flags/co.png')
+    .Tr-col.Tr-plantation фва
+    .Tr-col.Tr-type фываыва
+    .Tr-col.Tr-subtype ывафыва
+    .Tr-col.Tr-stemQuantity фваыыва
+    .Tr-col.Tr-stemsInPackaging фываыва
+    .Tr-col.Tr-packagingQuantity ываыва
+    .Tr-col.Tr-stemPrice ываы
+    .Tr-col.Tr-length ываыва
+    .Tr-col.Tr-sum
+        span 2000 $
+        .SumPanel(
+            ddpanel,
+            showEvent='click',
+            [(isOpened)]='isCartOpened',
+            [showArrow]='false')
+            div.SumPanel-header(ddpanel-header)
+                button(mat-icon-button)
+                    mat-icon(svgIcon='cart')
+            div.SumPanel-panel(ddpanel-body)
+                div(add-to-cart)
+

@@ -1,0 +1,21 @@
+.CartItem
+    .CartItem-main
+        .CartItem-title Rose Freedom
+        .CartItem-price 26 $
+        .CartItem-delete(*ngIf='!status')
+            button(
+                mat-icon-button,
+                type='button'
+            )
+                mat-icon(svgIcon='trash-can')
+        .CartItem-status(
+            *ngIf='status',
+            [class.CartItem-status--green]='status === "approved"',
+            [class.CartItem-status--red]='status === "declined"',
+            [class.CartItem-status--yellow]='status === "waiting"'
+        )
+    .CartItem-description 40 cм. / 25 упаковок / 280 стеблей
+    .CartItem-proposition(*ngIf='proposition')
+        span.TextRed !&#32;
+        span Отказано в скидке.&#32;
+        a.Green(href='#', (click)='discussPrice($event)') Согласовать стоимость

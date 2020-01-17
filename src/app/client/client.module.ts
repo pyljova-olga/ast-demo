@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ClientComponent } from './client.component';
 import { TradeComponent } from './pages/trade/trade.component';
@@ -15,6 +16,10 @@ import { RequestsComponent } from './pages/requests/requests.component';
 import { RequestComponent } from './pages/requests/request/request.component';
 import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
+import { MixFiltersComponent } from './components/trade/mix-filters/mix-filters.component';
+import { TradeClosedComponent } from './components/trade/trade-closed/trade-closed.component';
+import { CartNewComponent } from './components/trade/cart-new/cart-new.component';
+import { CartWaitingComponent } from './components/trade/cart-waiting/cart-waiting.component';
 
 const routes: Routes = [
   {
@@ -75,12 +80,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ClientComponent, TradeComponent, AdminComponent, UsersComponent, ActivitiesComponent, PurchasesComponent, ActiveComponent, ArchiveComponent, ClaimsComponent, RequestsComponent, RequestComponent],
+  declarations: [ClientComponent, TradeComponent, AdminComponent, UsersComponent, ActivitiesComponent, PurchasesComponent, ActiveComponent, ArchiveComponent, ClaimsComponent, RequestsComponent, RequestComponent, MixFiltersComponent, TradeClosedComponent, CartNewComponent, CartWaitingComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class ClientModule { }

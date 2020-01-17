@@ -1,0 +1,99 @@
+.Item
+    .Item-header.Header
+        .Header-icon
+            button(
+                mat-icon-button,
+                color='primary',
+                type='button',
+                (click)='toggleItem()')
+                mat-icon(
+                    [svgIcon]='isOpened ? "minus-in-circle" : "plus-in-circle"')
+        .Header-text
+            a.Green(
+                (click)='toggleItem()') Cotoon candy
+            mat-chip-list(
+                [selectable]='false',
+                *ngIf='isOpened && type === "request"')
+                mat-chip Есть в каталоге
+            .Header-image(
+                *ngIf='isOpened && type !== "request"')
+                button(
+                    mat-button,
+                    color='primary',
+                    type='button') Изображение
+        .Header-actions(
+            *ngIf='isOpened && type !== "request"')
+            button(
+                mat-button,
+                color='primary',
+                type='button') Сделать неактивным
+            button(
+                mat-button,
+                color='primary',
+                type='button') Изменить
+            button(
+                mat-button,
+                color='warn',
+                type='button') Удалить
+
+        .Header-actions(
+            *ngIf='isOpened && type === "request"')
+            button(
+                mat-button,
+                color='primary',
+                type='button') Изображение
+    .Item-body(
+        *ngIf='isOpened')
+        .Table
+            .Table-col
+                .Table-row Параметр
+                .Table-row Стоимость за стебель, $
+                .Table-row Цвет
+            .Table-col
+                .Table
+                    .Table-col
+                        .Table-row 30
+                        .Table-row 0,10
+                    .Table-col
+                        .Table-row 40
+                        .Table-row 0,12
+                    .Table-col
+                        .Table-row 60
+                        .Table-row 0,56
+                .Table.Colors
+                    .Color
+                        .Color-color.Color-color--red
+                        .Color-name Красный
+
+                    .Color
+                        .Color-color.Color-color--yellow
+                        .Color-name Желтый
+
+        .Item-add
+            button(
+                *ngIf='isOpened && type !== "request"',
+                mat-button,
+                color='primary',
+                type='button'
+            ) Добавить сорт
+
+            button(
+                *ngIf='isOpened && type === "request"',
+                mat-flat-button,
+                color='primary',
+                type='button'
+            ) Добавить в каталог
+
+            button(
+                *ngIf='isOpened && type === "request"',
+                mat-button,
+                color='primary',
+                type='button'
+            ) Добавить с изменениями
+
+            button(
+                *ngIf='isOpened && type === "request"',
+                mat-button,
+                color='primary',
+                type='button'
+            ) Отказать в заявке

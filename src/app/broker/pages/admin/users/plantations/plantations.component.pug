@@ -1,1 +1,88 @@
-p plantations works!
+.Plantations
+    .Filters([formGroup]='filtersForm')
+        .Filters-row
+            .Filters-left
+
+                mat-form-field.Form-field--white.Form-row.Filters-item(
+                    appearance="outline")
+
+                    input(placeholder='Плантация',
+                        matInput,
+                        formControlName="company",
+                        [matAutocomplete]='autoCompany')
+                    mat-icon.TextGreen(
+                        matSuffix,
+                        [svgIcon]='autoCompany.isOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"')
+
+                    mat-autocomplete(#autoCompany='matAutocomplete')
+                        mat-option(
+                            *ngFor='let item of filteredCompanies | async',
+                            [value] = 'item')
+                            | {{item}}
+
+
+                mat-form-field.Form-field--white.Form-row.Filters-item(
+                    appearance="outline")
+
+                    input(placeholder='Фамилия',
+                        matInput,
+                        formControlName="secondName",
+                        [matAutocomplete]='autoSecondName')
+                    mat-icon.TextGreen(
+                        matSuffix,
+                        [svgIcon]='autoSecondName.isOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"')
+
+                    mat-autocomplete(#autoSecondName='matAutocomplete')
+                        mat-option(
+                            *ngFor='let item of filteredSecondNames | async',
+                            [value] = 'item')
+                            | {{item}}
+
+
+                mat-form-field.Form-field--white.Form-row.Filters-item(
+                    appearance="outline")
+
+                    input(placeholder='Имя',
+                        matInput,
+                        formControlName="firstName",
+                        [matAutocomplete]='autoFirstName')
+                    mat-icon.TextGreen(
+                        matSuffix,
+                        [svgIcon]='autoFirstName.isOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"')
+
+                    mat-autocomplete(#autoFirstName='matAutocomplete')
+                        mat-option(
+                            *ngFor='let item of filteredFirstNames | async',
+                            [value] = 'item')
+                            | {{item}}
+
+                mat-form-field.Form-field--white.Filters-item(
+                    appearance="outline", #roleField)
+                    mat-select(
+                        formControlName="role",
+                        :disableOptionCentering='true',
+                        (selectionChange) = 'onRoleSelect()',
+                        placeholder='Роль')
+                        mat-option -
+                        mat-option(*ngFor="let role of roles", [value]="role") {{role.name}}
+
+
+
+            .Filters-right
+                button(
+                    type='button',
+                    mat-flat-button,
+                    color='primary'
+                ) Показать
+                button(
+                    type='button',
+                    mat-button,
+                    color='primary',
+                    (click)='cancel()'
+                ) Очистить
+
+    .Plantations-table
+        div(
+            user-table,
+            [users]='[{id: "123"}, {id: "1"}, {id: "144"}]',
+            type='plantations')

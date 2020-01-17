@@ -1,0 +1,61 @@
+@import '../../../../styles/variables';
+.CartItem {
+  &-main {
+    display: flex;
+    align-items: center;
+    height: 26px;
+  }
+
+  &-title {
+    flex: 1 1 auto;
+  }
+
+  &-price {
+    flex: 1 0 auto;
+    padding: 0 5px;
+    text-align: right;
+  }
+
+  &-delete {
+    margin: 0 -12px 0 0;
+
+    button {
+      color: $grey-dark;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+
+  &-description {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  &-status {
+    width: 14px;
+    height: 14px;
+    margin-left: 17px;
+    border-radius: 2px;
+    background: $grey-default;
+
+    &--green {
+      background: $green;
+    }
+
+    &--yellow {
+      background: $yellow;
+    }
+
+    &--red {
+      background: $red;
+    }
+  }
+
+  &-proposition {
+    margin: 7px 0 14px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

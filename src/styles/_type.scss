@@ -86,3 +86,9 @@ a.Green {
 .TextBlack {
   color: $black;
 }
+
+.TextGrey {
+  &--dark {
+    color: $grey-dark;
+  }
+}

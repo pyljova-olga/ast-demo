@@ -1,0 +1,17 @@
+.CartPlantation
+    .CartPlantation-left
+        .CartPlantation-action
+            button(
+                mat-icon-button,
+                color='primary',
+                type='button'
+            )
+                mat-icon([svgIcon]='isOpen ? "minus-in-circle" : "plus-in-circle"')
+        .CartPlantation-title
+            .CartPlantation-desc Плантация
+            .CartPlantation-name
+                b Latina
+    .CartPlantation-right
+        .CartPlantation-percent
+            span 55%
+        .CartPlantation-tooltip 4

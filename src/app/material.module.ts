@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 //Angular Material Components
-import {MatCheckboxModule} from '@angular/material';
+import {MatBadgeModule, MatCheckboxModule, MatNativeDateModule} from '@angular/material';
 import {MatRippleModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
@@ -36,12 +36,14 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   imports: [
+    MatBadgeModule,
     MatCheckboxModule,
     MatCheckboxModule,
     MatButtonModule,
     MatInputModule,
     MatAutocompleteModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatFormFieldModule,
     MatRadioModule,
     MatSelectModule,
@@ -70,12 +72,14 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatRippleModule,
   ],
   exports: [
+    MatBadgeModule,
     MatCheckboxModule,
     MatCheckboxModule,
     MatButtonModule,
     MatInputModule,
     MatAutocompleteModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatFormFieldModule,
     MatRadioModule,
     MatSelectModule,
@@ -103,5 +107,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatPaginatorModule,
     MatRippleModule
   ],
+  providers: [MatDatepickerModule]
 })
 export class MaterialModule { }

@@ -1,0 +1,34 @@
+.AddToCart
+    .AddToCart-header
+        .AddToCart-title Количество стеблей
+        .AddToCart-close
+            button(
+                mat-icon-button,
+                color='primary')
+                mat-icon(svgIcon='close')
+    .AddToCart-body
+        .AddToCart-max Минимальное значение 150
+        .AddToCart-field
+            .AddToCart-input(
+                number-input,
+                label='Укажите количество',
+                [showButtons] = 'false',
+                [step]='1',
+                [min]='150',
+                [isDecimal]='false',
+                [(defaultValue)]='quantity')
+            .AddToCart-tooltip 1 Fb
+        .AddToCart-field
+            .AddToCart-input(
+                number-input,
+                label='Желаемая стоимость за стебель',
+                align='center',
+                [step]='0.01',
+                [isDecimal]='true',
+                suffix='$',
+                [(defaultValue)]='price')
+            .AddToCart-tooltip 62.5 $
+        .AddToCart-submit
+            button(
+                mat-flat-button,
+                color='primary') Добавить в корзину

@@ -43,5 +43,39 @@ form.Form(
       routerLink='/auth/restore') {{'auth.login.btn.restore' | translate}}
 
 
+  //  div(number-input, [step]='0.01', [(defaultValue)]='testNumber', )
 
-    // div(number-input, [step]='0.01', [(defaultValue)]='testNumber', )
+    div
+      mat-form-field.Form-row(
+        appearance="outline")
+        mat-label Favorite animal
+        mat-select([formControl]="animalControl", required, :disableOptionCentering='true')
+          mat-option --
+          mat-option(*ngFor="let animal of animals", [value]="animal") {{animal.name}}
+        mat-error(*ngIf="animalControl.hasError('required')") Please choose an animal
+        mat-hint {{animalControl.value?.sound}}
+
+    div
+      mat-form-field.Form-row(
+        appearance="outline")
+        input(type="text", placeholder="Assignee", aria-label="Assignee", matInput, [formControl]="myControl", [matAutocomplete]="auto")
+        mat-autocomplete(#auto="matAutocomplete", [displayWith]="displayFn")
+          mat-option(*ngFor="let option of filteredOptions | async", [value]="option") {{option.name}}
+
+
+    div
+      mat-chip-list(aria-label="Fish selection")
+        mat-chip One fish
+          mat-icon(matChipRemove) cancel
+
+    div
+      mat-form-field.Form-row(
+        appearance="outline")
+        input(matInput, [matDatepicker]="picker1", placeholder="Angular forms", [formControl]="date")
+        mat-datepicker-toggle(matSuffix, [for]="picker1")
+          mat-icon(matDatepickerToggleIcon) keyboard_arrow_down
+        mat-datepicker(#picker1)
+
+
+
+

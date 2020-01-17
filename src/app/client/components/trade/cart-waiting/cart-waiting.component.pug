@@ -1,0 +1,66 @@
+.Cart
+    .Cart-order.Order(*ngFor='let order of orders')
+        .Order-header.Pointer(
+            cart-order-header,
+            [isOpen]='order.id === openedOrder',
+            (click)='toggleOrder(order.id)')
+        .Order-progress
+            span(style='width: 25%;')
+            span Утверждение: 12:15
+
+        .Order-body(*ngIf='order.id === openedOrder')
+            ng-container(*ngFor='let plantation of order.plantations')
+                .Plantation(
+                    [class.Plantation--opened]='plantation.id === openedPlantation'
+                )
+                    .Plantation-header.Pointer(
+                        cart-plantation,
+                        [isOpen]='plantation.id === openedPlantation',
+                        (click)='togglePlantation(plantation.id)')
+                    .Plantation-body(*ngIf='plantation.id === openedPlantation')
+                        .Plantation-type Solid
+                        .Plantation-item(cart-item, status='approved')
+                        .Plantation-item(cart-item, status='declined')
+                        .Plantation-item(cart-item, status='waiting', proposition='smth')
+                        .Plantation-item(cart-item, status='approved')
+                        .Plantation-item(cart-item, status='approved')
+
+                        .Plantation-type Mix
+                        .Plantation-item(cart-item, status='approved')
+                        .Plantation-item(cart-item, status='approved')
+                        .Plantation-item(cart-item, status='approved')
+                        .Plantation-item(cart-item, status='approved')
+                        .Plantation-item(cart-item, status='approved')
+
+                        .Plantation-action
+                            button(
+                                mat-button,
+                                color='primary',
+                                type='button') Удалить все лоты плантации
+                .Proposition(*ngIf='plantation.id === openedPlantation')
+                    .Proposition-description Предлагаем скидку 10% в связи с отказом по ряду позиций
+                    .Proposition-action
+                        button(
+                            mat-button,
+                            color='primary',
+                            type='button') Согласиться
+
+        .Order-footer(*ngIf='order.id === openedOrder')
+            .Order-sum Итого: 124$
+            .Order-submit
+                button(
+                    mat-flat-button,
+                    color='primary',
+                    type='button'
+                ) Оплатить
+                button(
+                    mat-button,
+                    color='primary',
+                    type='button'
+                ) Отменить
+
+
+//.Empty
+    p.Empty-description Здесь будут отображаться выбранные вами лоты.
+    div
+        img(src='./assets/imgs/pictures/emptyCart.png')

@@ -1,0 +1,12 @@
+.OrderHeader
+    .OrderHeader-left
+        .OrderHeader-country
+            img(src='./assets/imgs/flags/co.png')
+        .OrderHeader-number P-AST111-E-20190712_001
+    .OrderHeader-right
+        button(
+            mat-icon-button,
+            color='primary',
+            type='button'
+        )
+            mat-icon([svgIcon]='isOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"')

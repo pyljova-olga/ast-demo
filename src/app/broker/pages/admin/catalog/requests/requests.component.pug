@@ -1,1 +1,20 @@
-p requests works!
+.List
+    .List-list
+        ng-container(
+            *ngFor='let type of t')
+            div(
+                settings-type-item,
+                type='request',
+                (toggle)='openedTId === type.id ? openedTId=-1 : openedTId = type.id',
+                [isOpened]='openedTId === type.id',
+            )
+            ng-container(
+                *ngIf='type.id === openedTId')
+
+                div(
+                    settings-sub-type-item,
+                    *ngFor='let subtype of type.st',
+                    type='request',
+                    (toggle)='openedSTId === subtype.id ? openedSTId = -1 : openedSTId = subtype.id',
+                    [isOpened]='openedSTId === subtype.id')
+
